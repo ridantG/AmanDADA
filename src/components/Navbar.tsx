@@ -12,7 +12,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="flex items-center space-x-2">
           <h1 className="text-2xl font-bold text-yellow-500">ANCHOR</h1>
-          <span className="text-2xl font-bold text-white">AMAN</span>
+          <span className="text-2xl font-bold text-white">AMAN SHINDE</span>
         </div>
 
         {/* Desktop Nav Links */}

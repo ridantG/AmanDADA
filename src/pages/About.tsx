@@ -15,7 +15,7 @@ export default function About() {
       {/* Right Text Content */}
       <div className="md:w-1/2 w-full md:pl-12">
         <h3 className="text-sm font-semibold text-yellow-500 uppercase mb-2">
-          About Anchor Aman
+          About Anchor Aman Shinde
         </h3>
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#737874]">
           Anchor in Delhi | Top Wedding Anchor in India

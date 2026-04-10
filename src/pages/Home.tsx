@@ -77,7 +77,7 @@ export default function Home() {
           setHasAnimated(true);
           const duration = 2000; // 2 seconds
           const start = performance.now();
-          const finalValues = { events: 2500, clients: 500, years: 17, awards: 25 };
+          const finalValues = { events: 7000, clients: 5000, years: 17, awards: 25 };
 
           const animate = (time: number) => {
             const progress = Math.min((time - start) / duration, 1);
@@ -113,7 +113,7 @@ export default function Home() {
       Anchor | Wedding Anchor | Team Building Expert | Entertainer | Emcee
     </p>
 
-    <h1 className="text-4xl md:text-6xl font-bold mb-6">AMAN DADA</h1>
+    <h1 className="text-4xl md:text-6xl font-bold mb-6">THE MIC MAGICIAN</h1>
 
     {/* CONTACT NOW BUTTON FIXED */}
     <Link
@@ -138,7 +138,7 @@ export default function Home() {
 
         <div className="md:w-1/2 w-full md:pl-12">
           <h3 className="text-sm font-semibold text-yellow-500 uppercase mb-2">
-            About Anchor Aman
+            About Anchor Aman Shinde
           </h3>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 text-[#737874]">
             Anchor in Delhi | Top Wedding Anchor in India
@@ -265,7 +265,7 @@ export default function Home() {
   <div className="hidden md:flex md:w-1/2 justify-end">
     <img
       src="/assets/anchor.png" // replace this with your actual image path
-      alt="Anchor Aman"
+      alt="Anchor Aman Shinde"
       className="max-w-md w-full object-contain rounded-lg"
     />
   </div>

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { FaInstagram, FaWhatsapp } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp, FaYoutube, FaTwitter } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -10,7 +10,7 @@ export default function Footer() {
         <div>
           <h1 className="text-3xl font-bold">
             <span className="text-yellow-500">ANCHOR</span>
-            <span className="text-white">AMAN</span>
+            <span className="text-white">AMAN SHINDE</span>
           </h1>
           <p className="text-gray-400 mt-3">
             India’s premium event anchor with 17+ years of experience in
@@ -21,7 +21,7 @@ export default function Footer() {
           <div className="flex space-x-4 mt-5">
             {/* Instagram */}
             <a
-              href="https://www.instagram.com/anchor_shinde?igsh=OHNyZjFid2NpZThz"
+              href="https://www.instagram.com/anchor_shinde?igsh=MXJ4NnE3NGgzazg1ZQ%3D%3D&utm_source=qr"
               target="_blank"
               className="text-gray-300 hover:text-yellow-500 text-2xl transition"
             >
@@ -35,6 +35,24 @@ export default function Footer() {
               className="text-gray-300 hover:text-green-400 text-2xl transition"
             >
               <FaWhatsapp />
+            </a>
+
+            {/* YouTube */}
+            <a
+              href="https://youtube.com/@anchorfromdelhi?si=dRkvJWnPMnslOgi3"
+              target="_blank"
+              className="text-gray-300 hover:text-red-500 text-2xl transition"
+            >
+              <FaYoutube />
+            </a>
+
+            {/* Twitter / X */}
+            <a
+              href="https://x.com/anchoramanmp07?s=21"
+              target="_blank"
+              className="text-gray-300 hover:text-blue-400 text-2xl transition"
+            >
+              <FaTwitter />
             </a>
           </div>
         </div>
@@ -57,7 +75,7 @@ export default function Footer() {
           <ul className="space-y-3">
             <li>📍Pan India</li>
             <li>📞 +91 8871871143</li>
-            <li>📩 anchoramanofficial@gmail.com</li>
+            <li>📩 themicmagician@gmail.com</li>
           </ul>
         </div>
 
@@ -79,7 +97,7 @@ export default function Footer() {
 
       {/* COPYRIGHT */}
       <p className="text-center text-gray-500 text-sm">
-        © {new Date().getFullYear()} Anchor Aman. All Rights Reserved.
+        © {new Date().getFullYear()} Anchor Aman Shinde. All Rights Reserved.
       </p>
     </footer>
   );
