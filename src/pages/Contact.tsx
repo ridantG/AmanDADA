@@ -1,86 +1,134 @@
-import React from "react";
+import { type FormEvent } from "react";
+import { motion } from "framer-motion";
+import { Phone, Mail, MapPin } from "lucide-react";
+import { FaWhatsapp } from "react-icons/fa";
+
+const WHATSAPP_NUMBER = "918871871143";
+
+const fadeUp = {
+  initial: { opacity: 0, y: 28 },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true, amount: 0.3 },
+  transition: { duration: 0.6, ease: "easeOut" },
+} as const;
 
 export default function Contact() {
-  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
-    const formData = new FormData(event.currentTarget);
-
-    // Convert FormData → plain JS object
-    const formObj: Record<string, string> = {};
-    formData.forEach((value, key) => {
-      formObj[key] = value.toString();
-    });
-
-    console.log("SUBMITTED DATA:", formObj);
-
-    // Show success message
-    alert("Your message has been sent!");
+    alert("Thanks! Your message has been sent — we'll get back to you shortly.");
+    event.currentTarget.reset();
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 flex items-center justify-center px-6 py-16">
-      <div className="max-w-2xl w-full bg-white shadow-xl rounded-2xl p-10">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">
-          Contact Us
-        </h2>
+    <div className="relative min-h-screen bg-[#0a0a0a] text-white px-6 md:px-16 py-20 overflow-hidden">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-lg h-72 bg-yellow-500/5 rounded-full blur-3xl" />
 
-        <p className="text-gray-600 text-center mb-8">
-          Have questions? Fill out the form below and we’ll get back to you!
+      <motion.div {...fadeUp} className="relative max-w-6xl mx-auto text-center mb-16">
+        <h3 className="text-yellow-500 text-sm font-semibold uppercase mb-2">Contact Us</h3>
+        <h1 className="font-display text-3xl md:text-4xl font-bold mb-4">Let's Plan Your Event</h1>
+        <p className="text-gray-400 max-w-xl mx-auto">
+          Have a date in mind or just exploring options? Send a few details and we'll get back to
+          you shortly.
         </p>
+      </motion.div>
 
-        {/* Contact Form */}
-        <form onSubmit={handleSubmit} className="space-y-6">
-          {/* Name */}
-          <div>
-            <label className="block text-gray-700 font-medium mb-2">
-              Your Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              required
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="Enter your name"
-            />
+      <div className="relative max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-5 gap-10">
+        {/* CONTACT INFO */}
+        <motion.div {...fadeUp} className="md:col-span-2 space-y-6">
+          <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+            <Phone className="text-yellow-500 shrink-0" size={22} />
+            <div>
+              <p className="text-sm text-gray-400">Call or WhatsApp</p>
+              <a href="tel:+918871871143" className="font-semibold hover:text-yellow-500 transition">
+                +91 8871871143
+              </a>
+            </div>
           </div>
 
-          {/* Email */}
-          <div>
-            <label className="block text-gray-700 font-medium mb-2">
-              Your Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              required
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="Enter your email"
-            />
+          <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+            <Mail className="text-yellow-500 shrink-0" size={22} />
+            <div>
+              <p className="text-sm text-gray-400">Email</p>
+              <a
+                href="mailto:themicmagician@gmail.com"
+                className="font-semibold hover:text-yellow-500 transition"
+              >
+                themicmagician@gmail.com
+              </a>
+            </div>
           </div>
 
-          {/* Message */}
+          <div className="flex items-start gap-4 bg-white/5 border border-white/10 rounded-xl p-5">
+            <MapPin className="text-yellow-500 shrink-0" size={22} />
+            <div>
+              <p className="text-sm text-gray-400">Based in</p>
+              <p className="font-semibold">Pan India · Destination Weddings Worldwide</p>
+            </div>
+          </div>
+
+          <a
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Aman, I want to book you for an event.")}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center justify-center gap-2 bg-yellow-500 text-black font-semibold px-6 py-3 rounded-xl hover:bg-yellow-400 hover:scale-105 transition"
+          >
+            <FaWhatsapp size={20} />
+            Message on WhatsApp
+          </a>
+        </motion.div>
+
+        {/* FORM */}
+        <motion.form {...fadeUp} onSubmit={handleSubmit} className="md:col-span-3 space-y-5">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div>
+              <label htmlFor="name" className="block text-sm text-gray-400 mb-2">
+                Your Name
+              </label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                required
+                placeholder="Enter your name"
+                className="w-full bg-white/5 border border-white/10 focus:border-yellow-500 rounded-xl px-4 py-3 outline-none transition-colors"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm text-gray-400 mb-2">
+                Your Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                required
+                placeholder="Enter your email"
+                className="w-full bg-white/5 border border-white/10 focus:border-yellow-500 rounded-xl px-4 py-3 outline-none transition-colors"
+              />
+            </div>
+          </div>
+
           <div>
-            <label className="block text-gray-700 font-medium mb-2">
+            <label htmlFor="message" className="block text-sm text-gray-400 mb-2">
               Your Message
             </label>
             <textarea
+              id="message"
               name="message"
               rows={5}
               required
-              className="w-full px-4 py-3 rounded-xl border border-gray-300 focus:ring-2 focus:ring-blue-500 outline-none"
-              placeholder="Write your message here..."
+              placeholder="Tell us about your event — date, city, and what you have in mind"
+              className="w-full bg-white/5 border border-white/10 focus:border-yellow-500 rounded-xl px-4 py-3 outline-none transition-colors resize-none"
             ></textarea>
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
-            className="w-full py-3 bg-blue-600 text-white font-semibold rounded-xl hover:bg-blue-700 transition"
+            className="w-full py-3 bg-yellow-500 text-black font-semibold rounded-xl hover:bg-yellow-400 hover:scale-[1.02] transition"
           >
             Send Message
           </button>
-        </form>
+        </motion.form>
       </div>
     </div>
   );

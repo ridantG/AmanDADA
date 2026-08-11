@@ -1,5 +1,8 @@
 import { Link } from "react-router-dom";
 import { FaInstagram, FaWhatsapp, FaYoutube, FaTwitter } from "react-icons/fa";
+import { MapPin, Phone, Mail } from "lucide-react";
+
+const WHATSAPP_NUMBER = "918871871143";
 
 export default function Footer() {
   return (
@@ -19,38 +22,42 @@ export default function Footer() {
 
           {/* Social Icons */}
           <div className="flex space-x-4 mt-5">
-            {/* Instagram */}
             <a
               href="https://www.instagram.com/anchor_shinde?igsh=MXJ4NnE3NGgzazg1ZQ%3D%3D&utm_source=qr"
               target="_blank"
-              className="text-gray-300 hover:text-yellow-500 text-2xl transition"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="text-gray-300 hover:text-yellow-500 text-2xl transition-transform hover:scale-110"
             >
               <FaInstagram />
             </a>
 
-            {/* WhatsApp direct message */}
             <a
-              href="https://wa.me/91XXXXXXXXXX?text=Hi%20Aman,%20I%20want%20to%20book%20you%20for%20an%20event."
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Aman, I want to book you for an event.")}`}
               target="_blank"
-              className="text-gray-300 hover:text-green-400 text-2xl transition"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="text-gray-300 hover:text-green-400 text-2xl transition-transform hover:scale-110"
             >
               <FaWhatsapp />
             </a>
 
-            {/* YouTube */}
             <a
               href="https://youtube.com/@anchorfromdelhi?si=dRkvJWnPMnslOgi3"
               target="_blank"
-              className="text-gray-300 hover:text-red-500 text-2xl transition"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="text-gray-300 hover:text-red-500 text-2xl transition-transform hover:scale-110"
             >
               <FaYoutube />
             </a>
 
-            {/* Twitter / X */}
             <a
               href="https://x.com/anchoramanmp07?s=21"
               target="_blank"
-              className="text-gray-300 hover:text-blue-400 text-2xl transition"
+              rel="noopener noreferrer"
+              aria-label="Twitter / X"
+              className="text-gray-300 hover:text-blue-400 text-2xl transition-transform hover:scale-110"
             >
               <FaTwitter />
             </a>
@@ -64,7 +71,6 @@ export default function Footer() {
             <li><Link to="/" className="hover:text-yellow-500 transition">Home</Link></li>
             <li><Link to="/about" className="hover:text-yellow-500 transition">About</Link></li>
             <li><Link to="/services" className="hover:text-yellow-500 transition">Services</Link></li>
-            <li><Link to="/gallery" className="hover:text-yellow-500 transition">Gallery</Link></li>
             <li><Link to="/contact" className="hover:text-yellow-500 transition">Contact</Link></li>
           </ul>
         </div>
@@ -73,9 +79,21 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold text-lg mb-4">Contact Info</h3>
           <ul className="space-y-3">
-            <li>📍Pan India</li>
-            <li>📞 +91 8871871143</li>
-            <li>📩 themicmagician@gmail.com</li>
+            <li className="flex items-center gap-2">
+              <MapPin size={16} className="text-yellow-500 shrink-0" /> Pan India
+            </li>
+            <li className="flex items-center gap-2">
+              <Phone size={16} className="text-yellow-500 shrink-0" />
+              <a href="tel:+918871871143" className="hover:text-yellow-500 transition">
+                +91 8871871143
+              </a>
+            </li>
+            <li className="flex items-center gap-2">
+              <Mail size={16} className="text-yellow-500 shrink-0" />
+              <a href="mailto:themicmagician@gmail.com" className="hover:text-yellow-500 transition">
+                themicmagician@gmail.com
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -83,9 +101,10 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold text-lg mb-4">Book Me Now</h3>
           <a
-            href="https://wa.me/91XXXXXXXXXX?text=Hi%20Aman,%20I%20want%20to%20book%20you"
+            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Aman, I want to book you for an event.")}`}
             target="_blank"
-            className="bg-yellow-500 text-black px-6 py-3 rounded-md font-semibold block text-center hover:bg-yellow-400 transition"
+            rel="noopener noreferrer"
+            className="bg-yellow-500 text-black px-6 py-3 rounded-md font-semibold block text-center hover:bg-yellow-400 hover:scale-105 transition"
           >
             WhatsApp Message
           </a>

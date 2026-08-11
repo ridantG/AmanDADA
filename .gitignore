@@ -12,6 +12,9 @@ dist
 dist-ssr
 *.local
 
+# Full-resolution source images kept locally (git history has the pre-optimization versions)
+src/assets/original/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

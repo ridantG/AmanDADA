@@ -1,9 +1,100 @@
 import { motion } from "framer-motion";
+import {
+  Mic,
+  Building2,
+  Target,
+  Flower2,
+  PartyPopper,
+  Globe,
+  MapPin,
+  CheckCircle2,
+} from "lucide-react";
+
+const services = [
+  {
+    icon: Mic,
+    title: "Professional Anchoring & Hosting",
+    blurb: "A powerful blend of energy, elegance, and crowd connection.",
+    items: [
+      "Haldi • Mehendi • Sangeet • Wedding • Reception",
+      "Corporate Events & Annual Meets",
+      "Baby Showers & Birthdays",
+      "Engagement Games & Family Entertainment",
+      "Couple Entries & Stage Flow",
+      "Ritual Coordination",
+      "Customized Scripts & Interactive Hosting",
+    ],
+  },
+  {
+    icon: Building2,
+    title: "Corporate Events & Conferences",
+    blurb: "Designed with precision and professionalism.",
+    items: [
+      "Event Planning",
+      "Conference Management",
+      "Brand Launches",
+      "Award Ceremonies",
+      "AV Setup",
+      "Stage Design & Production",
+    ],
+  },
+  {
+    icon: Target,
+    title: "Complete Event Management",
+    items: [
+      "Timeline planning",
+      "Vendor coordination",
+      "Guest assistance",
+      "Hospitality",
+      "Logistics & scheduling",
+      "Budget mapping",
+    ],
+  },
+  {
+    icon: Flower2,
+    title: "Premium Wedding & Event Décor",
+    items: [
+      "Haldi Carnival Themes",
+      "Mehendi Boho, Floral & Traditional",
+      "Sangeet LED Backdrops",
+      "Wedding Luxury Décor",
+      "Reception Grand Décor",
+      "Baby Shower Themes",
+      "Birthday Themes",
+      "Corporate Stage Décor",
+    ],
+  },
+  {
+    icon: PartyPopper,
+    title: "Private Parties & Celebrations",
+    items: ["Theme décor", "House party setup", "DJ & Music", "Family games", "Photography"],
+  },
+  {
+    icon: Globe,
+    title: "Destination Wedding Solutions",
+    items: [
+      "Venue Shortlisting",
+      "Theme & Décor",
+      "Artist Curation",
+      "Hospitality",
+      "Ritual Management",
+      "Photography & BTS",
+      "Logistics & Travel",
+      "Full Production Support",
+    ],
+  },
+];
+
+const whyChooseUs = [
+  "17+ years of industry experience",
+  "Strong foothold in Delhi, Indore & Gwalior",
+  "360° event solutions under one roof",
+  "Reliable teams for every segment",
+  "Creative concepts, perfect execution",
+  "Professional, polished and premium experience",
+];
 
 export default function Services() {
-  const heading = "text-3xl md:text-4xl font-bold text-[#737874] mb-4";
-  const card = "bg-white shadow-lg p-6 rounded-xl border-l-4 border-yellow-500";
-
   return (
     <div className="bg-gray-50 pt-24 pb-16 px-6 md:px-20">
       {/* PAGE HEADER */}
@@ -12,11 +103,11 @@ export default function Services() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
       >
-        <h1 className="text-4xl md:text-5xl font-bold text-[#737874] uppercase">
+        <h1 className="font-display text-4xl md:text-5xl font-bold text-[#737874] uppercase">
           Services by Anchor Aman Shinde
         </h1>
         <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
-          The Mic Magician — Delivering unforgettable celebrations with 17+ years of 
+          The Mic Magician — Delivering unforgettable celebrations with 17+ years of
           expertise in events, weddings, corporate shows & entertainment.
         </p>
         <p className="text-yellow-500 mt-2 text-lg">
@@ -25,9 +116,12 @@ export default function Services() {
       </motion.div>
 
       {/* REGION SECTION */}
-      <section className="mb-16">
-        <h2 className={heading}>🌍 Service Regions</h2>
-        <div className={card}>
+      <section className="mb-16 max-w-4xl mx-auto">
+        <div className="flex items-center gap-3 mb-4">
+          <MapPin className="text-yellow-500" size={28} />
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#737874]">Service Regions</h2>
+        </div>
+        <div className="bg-white shadow-lg p-6 rounded-xl border-l-4 border-yellow-500">
           <p className="text-gray-700 leading-relaxed">
             We proudly serve:
             <br />• Delhi & Delhi NCR
@@ -35,7 +129,8 @@ export default function Services() {
             <br />• Gwalior & Nearby Cities
             <br />• Agra • Jaipur • Ujjain • Bhopal • Jabalpur • Kota • Jhansi • Chambal Belt
             <br />• Pan-India Destination Weddings
-            <br /><br />
+            <br />
+            <br />
             Wherever your celebration is — <strong>The Mic Magician</strong> makes it magical.
           </p>
         </div>
@@ -43,253 +138,40 @@ export default function Services() {
 
       {/* MAIN SERVICES */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        {/* 1. Anchoring */}
-        <section>
-          <h2 className={heading}>🎤 Professional Anchoring & Hosting</h2>
-          <div className={card}>
-            <p className="text-gray-700 mb-3">A powerful blend of energy, elegance, and crowd connection.</p>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Haldi • Mehendi • Sangeet • Wedding • Reception
-              {"\n"}• Corporate Events & Annual Meets
-              {"\n"}• Baby Showers & Birthdays
-              {"\n"}• Engagement Games & Family Entertainment
-              {"\n"}• Couple Entries & Stage Flow
-              {"\n"}• Ritual Coordination
-              {"\n"}• Customized Scripts & Interactive Hosting
-            </p>
-          </div>
-        </section>
-
-        {/* 2. Artist Management */}
-        <section>
-          <h2 className={heading}>⭐ Artist & Celebrity Management</h2>
-          <div className={card}>
-            <p className="text-gray-700 mb-3">
-              Premium artists curated to match your event’s vibe.
-            </p>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Singers & Live Bands
-              {"\n"}• Celebrity Artists
-              {"\n"}• DJs & Dhol Artists
-              {"\n"}• Folk & Regional Performers
-              {"\n"}• Dance Troupes
-              {"\n"}• Instrumental Artists
-              {"\n"}• LED, Fire & Specialty Acts
-              {"\n"}• Verified Emcees
-            </p>
-          </div>
-        </section>
-
-        {/* 3. BTS Creation */}
-        <section>
-          <h2 className={heading}>🎥 Luxury BTS Content Creation</h2>
-          <div className={card}>
-            <p className="text-gray-700 mb-3">
-              A modern must-have for weddings and celebrations.
-            </p>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Cinematic BTS
-              {"\n"}• Raw emotional clips
-              {"\n"}• Couple & family reactions
-              {"\n"}• Same-day reels
-              {"\n"}• Story-style edits
-            </p>
-          </div>
-        </section>
-
-        {/* 4. Corporate Events */}
-        <section>
-          <h2 className={heading}>🏢 Corporate Events & Conferences</h2>
-          <div className={card}>
-            <p className="text-gray-700 mb-3">Designed with precision and professionalism.</p>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Event Planning
-              {"\n"}• Conference Management
-              {"\n"}• Brand Launches
-              {"\n"}• Award Ceremonies
-              {"\n"}• AV Setup
-              {"\n"}• Stage Design & Production
-            </p>
-          </div>
-        </section>
-
-        {/* 5. Event Management */}
-        <section>
-          <h2 className={heading}>🎯 Complete Event Management</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Timeline planning
-              {"\n"}• Vendor coordination
-              {"\n"}• Guest assistance
-              {"\n"}• Hospitality
-              {"\n"}• Logistics & scheduling
-              {"\n"}• Budget mapping
-            </p>
-          </div>
-        </section>
-
-        {/* 6. Decor */}
-        <section>
-          <h2 className={heading}>🌸 Premium Wedding & Event Décor</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Haldi Carnival Themes
-              {"\n"}• Mehendi Boho, Floral & Traditional
-              {"\n"}• Sangeet LED Backdrops
-              {"\n"}• Wedding Luxury Décor
-              {"\n"}• Reception Grand Décor
-              {"\n"}• Baby Shower Themes
-              {"\n"}• Birthday Themes
-              {"\n"}• Corporate Stage Décor
-            </p>
-          </div>
-        </section>
-
-        {/* 7. Entries */}
-        <section>
-          <h2 className={heading}>💞 Bride & Groom Entry Experiences</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • LED Tunnel Entry
-              {"\n"}• Cold Pyro Entry
-              {"\n"}• Floral Chadar
-              {"\n"}• Royal Entries
-              {"\n"}• Fairy Light Entry
-              {"\n"}• Thematic Entries
-            </p>
-          </div>
-        </section>
-
-        {/* 8. Varmala Themes */}
-        <section>
-          <h2 className={heading}>👑 Latest Varmala Themes</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Hydraulic Stage
-              {"\n"}• Revolving Platform
-              {"\n"}• Lotus Concept
-              {"\n"}• Flower Shower
-              {"\n"}• Cold Pyro Varmala
-              {"\n"}• Crystal Concepts
-            </p>
-          </div>
-        </section>
-
-        {/* 9. Photography */}
-        <section>
-          <h2 className={heading}>📸 Photography & Videography</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Candid Photography
-              {"\n"}• Traditional Photo & Video
-              {"\n"}• Cinematic Films
-              {"\n"}• Drone Coverage
-              {"\n"}• Pre-Wedding
-              {"\n"}• Highlights & Reels
-            </p>
-          </div>
-        </section>
-
-        {/* 10. Stage & Sound */}
-        <section>
-          <h2 className={heading}>🔊 Stage, Sound, Lighting & Production</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • P4 LED Wall
-              {"\n"}• Concert Sound
-              {"\n"}• Intelligent Lights
-              {"\n"}• Special Effects
-              {"\n"}• Technical Setup
-            </p>
-          </div>
-        </section>
-
-        {/* 11. Catering */}
-        <section>
-          <h2 className={heading}>🍽️ Outdoor Catering Services</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Multi-cuisine
-              {"\n"}• Live Counters
-              {"\n"}• Desserts & Mocktails
-              {"\n"}• Service Staff
-            </p>
-          </div>
-        </section>
-
-        {/* 12. Travel */}
-        <section>
-          <h2 className={heading}>🚗 Rental Car & Travel Assistance</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Luxury Cars
-              {"\n"}• Sedans & SUVs
-              {"\n"}• Tempo Travellers
-              {"\n"}• VIP Travel Coordination
-            </p>
-          </div>
-        </section>
-
-        {/* 13. Private Parties */}
-        <section>
-          <h2 className={heading}>🎉 Private Parties & Celebrations</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Theme décor
-              {"\n"}• House party setup
-              {"\n"}• DJ & Music
-              {"\n"}• Family games
-              {"\n"}• Photography
-            </p>
-          </div>
-        </section>
-
-        {/* 14. Concerts */}
-        <section>
-          <h2 className={heading}>🎵 Concerts & Live Shows</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Artist booking
-              {"\n"}• Production
-              {"\n"}• LED & Lighting
-              {"\n"}• Crowd coordination
-              {"\n"}• Marketing videos
-            </p>
-          </div>
-        </section>
-
-        {/* 15. Destination Weddings */}
-        <section>
-          <h2 className={heading}>🌍 Destination Wedding Solutions</h2>
-          <div className={card}>
-            <p className="text-gray-700 whitespace-pre-line">
-              • Venue Shortlisting
-              {"\n"}• Theme & Décor
-              {"\n"}• Artist Curation
-              {"\n"}• Hospitality
-              {"\n"}• Ritual Management
-              {"\n"}• Photography & BTS
-              {"\n"}• Logistics & Travel
-              {"\n"}• Full Production Support
-            </p>
-          </div>
-        </section>
-
+        {services.map((service) => (
+          <motion.section
+            key={service.title}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0.3 }}
+            transition={{ duration: 0.4 }}
+          >
+            <div className="bg-white shadow-lg hover:shadow-xl p-6 rounded-xl border-l-4 border-yellow-500 hover:-translate-y-1 transition h-full">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-11 h-11 rounded-lg bg-yellow-500/10 flex items-center justify-center shrink-0">
+                  <service.icon className="text-yellow-500" size={22} />
+                </div>
+                <h2 className="font-display text-xl font-bold text-[#737874]">{service.title}</h2>
+              </div>
+              {service.blurb && <p className="text-gray-700 mb-3">{service.blurb}</p>}
+              <p className="text-gray-700 whitespace-pre-line">
+                {service.items.map((item) => `• ${item}`).join("\n")}
+              </p>
+            </div>
+          </motion.section>
+        ))}
       </div>
 
       {/* WHY CHOOSE US */}
-      <section className="mt-20 bg-yellow-500 text-black p-10 rounded-2xl shadow-xl">
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">
-          ⭐ Why Families & Brands Choose Us
-        </h2>
-        <ul className="text-lg leading-relaxed space-y-2">
-          <li>✔ 17+ years of industry experience</li>
-          <li>✔ Strong foothold in Delhi, Indore & Gwalior</li>
-          <li>✔ 360° event solutions under one roof</li>
-          <li>✔ Reliable teams for every segment</li>
-          <li>✔ Creative concepts, perfect execution</li>
-          <li>✔ Professional, polished and premium experience</li>
+      <section className="mt-20 max-w-5xl mx-auto bg-yellow-500 text-black p-10 rounded-2xl shadow-xl">
+        <h2 className="font-display text-3xl md:text-4xl font-bold mb-6">Why Families & Brands Choose Us</h2>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-3 text-lg leading-relaxed">
+          {whyChooseUs.map((point) => (
+            <li key={point} className="flex items-start gap-2">
+              <CheckCircle2 className="shrink-0 mt-1" size={20} />
+              {point}
+            </li>
+          ))}
         </ul>
       </section>
     </div>
