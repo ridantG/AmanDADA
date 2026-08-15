@@ -2,6 +2,7 @@ import { type FormEvent } from "react";
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
+import SEO from "../components/SEO";
 
 const WHATSAPP_NUMBER = "918871871143";
 
@@ -21,6 +22,11 @@ export default function Contact() {
 
   return (
     <div className="relative min-h-screen bg-[#0a0a0a] text-white px-6 md:px-16 py-20 overflow-hidden">
+      <SEO
+        title="Contact"
+        description="Book Aman Shinde, The Mic Magician, for your next event. Call, WhatsApp, or send a message to check availability and get a quote."
+        path="/contact"
+      />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-lg h-72 bg-yellow-500/5 rounded-full blur-3xl" />
 
       <motion.div {...fadeUp} className="relative max-w-6xl mx-auto text-center mb-16">

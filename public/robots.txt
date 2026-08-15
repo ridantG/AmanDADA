@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://anchor-aman-shinde.shaadisamadhan.com/sitemap.xml

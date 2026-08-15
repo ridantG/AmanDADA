@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import SEO from "../components/SEO";
 import aboutImage from "../assets/about.jpeg";
 
 const fadeUp = {
@@ -12,6 +13,11 @@ const fadeUp = {
 export default function About() {
   return (
     <section className="relative flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-16 bg-white text-gray-800 overflow-hidden">
+      <SEO
+        title="About Aman Shinde"
+        description="17+ years, 8,000+ events, and a reputation as Central India's Most Versatile Anchor — the story behind Aman Shinde, The Mic Magician of India."
+        path="/about"
+      />
       <div className="absolute -top-24 -right-24 w-72 h-72 bg-yellow-500/10 rounded-full blur-3xl" />
 
       {/* Left Image */}
@@ -28,9 +34,9 @@ export default function About() {
         <h3 className="text-sm font-semibold text-yellow-500 uppercase mb-2">
           About Anchor Aman Shinde
         </h3>
-        <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-[#737874]">
+        <h1 className="font-display text-3xl md:text-4xl font-bold mb-4 text-[#737874]">
           Anchor in Delhi | Top Wedding Anchor in India
-        </h2>
+        </h1>
         <p className="text-gray-600 leading-relaxed mb-4">
           Friends and clients call him "The Mic Magician of India" — Aman Shinde has spent the last
           17 years on stage as a celebrity anchor, emcee, and comedian host. Somewhere along the way

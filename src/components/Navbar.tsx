@@ -1,13 +1,17 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
-import { Menu, X } from "lucide-react"; // for mobile menu icons
+import { Menu, X, Phone, Mail } from "lucide-react"; // for mobile menu icons
+import { FaInstagram, FaWhatsapp, FaYoutube, FaTwitter } from "react-icons/fa";
 
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
   { to: "/services", label: "Services" },
+  { to: "/gallery", label: "Gallery" },
 ];
+
+const WHATSAPP_NUMBER = "918871871143";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -15,11 +19,66 @@ export default function Navbar() {
 
   return (
     <nav className="fixed top-0 left-0 w-full bg-[#1c1f1c] text-white shadow-md z-50">
+      {/* Top contact/social bar */}
+      <div className="hidden md:block bg-black/30 border-b border-white/5">
+        <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-2 text-xs text-gray-300">
+          <div className="flex items-center gap-6">
+            <a href="tel:+918871871143" className="flex items-center gap-1.5 hover:text-yellow-500 transition">
+              <Phone size={13} /> +91 8871871143
+            </a>
+            <a
+              href="mailto:themicmagician@gmail.com"
+              className="flex items-center gap-1.5 hover:text-yellow-500 transition"
+            >
+              <Mail size={13} /> themicmagician@gmail.com
+            </a>
+          </div>
+          <div className="flex items-center gap-4 text-sm">
+            <a
+              href="https://www.instagram.com/anchor_shinde?igsh=MXJ4NnE3NGgzazg1ZQ%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram"
+              className="hover:text-yellow-500 transition-transform hover:scale-110"
+            >
+              <FaInstagram />
+            </a>
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Aman, I want to book you for an event.")}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp"
+              className="hover:text-green-400 transition-transform hover:scale-110"
+            >
+              <FaWhatsapp />
+            </a>
+            <a
+              href="https://youtube.com/@anchorfromdelhi?si=dRkvJWnPMnslOgi3"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube"
+              className="hover:text-red-500 transition-transform hover:scale-110"
+            >
+              <FaYoutube />
+            </a>
+            <a
+              href="https://x.com/anchoramanmp07?s=21"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Twitter / X"
+              className="hover:text-blue-400 transition-transform hover:scale-110"
+            >
+              <FaTwitter />
+            </a>
+          </div>
+        </div>
+      </div>
+
       <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-6">
 
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-2">
-          <h1 className="text-2xl font-bold text-yellow-500">ANCHOR</h1>
+          <p className="text-2xl font-bold text-yellow-500">ANCHOR</p>
           <span className="text-2xl font-bold text-white">AMAN SHINDE</span>
         </Link>
 

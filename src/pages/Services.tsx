@@ -9,6 +9,7 @@ import {
   MapPin,
   CheckCircle2,
 } from "lucide-react";
+import SEO from "../components/SEO";
 
 const services = [
   {
@@ -97,6 +98,11 @@ const whyChooseUs = [
 export default function Services() {
   return (
     <div className="bg-gray-50 pt-24 pb-16 px-6 md:px-20">
+      <SEO
+        title="Services"
+        description="Anchoring, corporate events, décor, private parties, and destination weddings — explore the full range of services from Aman Shinde, The Mic Magician."
+        path="/services"
+      />
       {/* PAGE HEADER */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}

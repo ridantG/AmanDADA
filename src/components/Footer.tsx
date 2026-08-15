@@ -11,10 +11,10 @@ export default function Footer() {
 
         {/* LOGO + ABOUT */}
         <div>
-          <h1 className="text-3xl font-bold">
+          <p className="text-3xl font-bold">
             <span className="text-yellow-500">ANCHOR</span>
             <span className="text-white">AMAN SHINDE</span>
-          </h1>
+          </p>
           <p className="text-gray-400 mt-3">
             India’s premium event anchor with 17+ years of experience in
             weddings, corporate shows, concerts & international events.
@@ -71,6 +71,7 @@ export default function Footer() {
             <li><Link to="/" className="hover:text-yellow-500 transition">Home</Link></li>
             <li><Link to="/about" className="hover:text-yellow-500 transition">About</Link></li>
             <li><Link to="/services" className="hover:text-yellow-500 transition">Services</Link></li>
+            <li><Link to="/gallery" className="hover:text-yellow-500 transition">Gallery</Link></li>
             <li><Link to="/contact" className="hover:text-yellow-500 transition">Contact</Link></li>
           </ul>
         </div>

@@ -15,8 +15,29 @@ import {
   Landmark,
   Globe,
 } from "lucide-react";
+import { FaInstagram, FaYoutube } from "react-icons/fa";
+import SEO from "../components/SEO";
 import heroImage from "../assets/background.jpeg";
 import aboutImage from "../assets/about.jpeg";
+
+const socialLinks = [
+  {
+    icon: FaInstagram,
+    name: "Instagram",
+    handle: "@anchor_shinde",
+    cta: "Follow",
+    href: "https://www.instagram.com/anchor_shinde?igsh=MXJ4NnE3NGgzazg1ZQ%3D%3D&utm_source=qr",
+    hoverText: "group-hover:text-pink-400",
+  },
+  {
+    icon: FaYoutube,
+    name: "YouTube",
+    handle: "@anchorfromdelhi",
+    cta: "Subscribe",
+    href: "https://youtube.com/@anchorfromdelhi?si=dRkvJWnPMnslOgi3",
+    hoverText: "group-hover:text-red-500",
+  },
+];
 
 export default function Home() {
   const cards = [
@@ -167,6 +188,11 @@ export default function Home() {
 
   return (
     <div className="bg-gray-50">
+      <SEO
+        title="Anchor Aman Shinde | The Mic Magician of India"
+        description="Celebrity anchor Aman Shinde brings 17+ years of experience hosting weddings, corporate galas, and celebrity shows across India, Dubai & Singapore."
+        path="/"
+      />
       {/* ================= HERO SECTION ================= */}
       <section
   className="relative h-screen flex items-center justify-center bg-cover bg-center"
@@ -183,12 +209,28 @@ export default function Home() {
       THE MIC <span className="text-yellow-500">MAGICIAN</span>
     </h1>
 
-    <Link
-      to="/contact"
-      className="bg-yellow-500 text-black font-semibold px-8 py-3 rounded-md hover:bg-yellow-400 hover:scale-105 transition inline-block shadow-lg shadow-yellow-500/20"
-    >
-      Contact Now
-    </Link>
+    <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+      <Link
+        to="/contact"
+        className="bg-yellow-500 text-black font-semibold px-8 py-3 rounded-md hover:bg-yellow-400 hover:scale-105 transition inline-block shadow-lg shadow-yellow-500/20"
+      >
+        Contact Now
+      </Link>
+      <Link
+        to="/services"
+        className="border border-white/40 text-white font-semibold px-8 py-3 rounded-md hover:border-yellow-500 hover:text-yellow-500 hover:scale-105 transition inline-block"
+      >
+        Explore Services
+      </Link>
+    </div>
+
+    <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-white/80 uppercase tracking-wide">
+      <span>17+ Years Experience</span>
+      <span className="text-yellow-500">•</span>
+      <span>8000+ Events Hosted</span>
+      <span className="text-yellow-500">•</span>
+      <span>India · Dubai · Singapore</span>
+    </div>
   </div>
 
   <ChevronDown className="absolute bottom-8 left-1/2 -translate-x-1/2 text-yellow-400 animate-bounce" size={32} />
@@ -320,6 +362,37 @@ export default function Home() {
           </motion.div>
         ))}
       </section>
+
+      {/* ================= FOLLOW THE JOURNEY SECTION ================= */}
+      <section className="py-20 px-6 md:px-16 bg-white text-center">
+        <motion.h2 {...fadeUp} className="font-display text-3xl md:text-4xl font-bold text-[#737874] mb-2">
+          Follow the Journey
+        </motion.h2>
+        <p className="text-gray-500 mb-10">Behind-the-scenes, highlight reels, and what's next on stage</p>
+
+        <div className="max-w-3xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {socialLinks.map((social) => (
+            <motion.a
+              key={social.name}
+              {...fadeUp}
+              href={social.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group flex items-center gap-4 bg-gray-50 hover:bg-gray-100 border border-gray-200 rounded-xl p-6 transition"
+            >
+              <social.icon className={`text-gray-700 shrink-0 transition-colors ${social.hoverText}`} size={36} />
+              <span className="text-left">
+                <span className="block font-semibold text-[#737874]">{social.name}</span>
+                <span className="block text-sm text-gray-500">{social.handle}</span>
+              </span>
+              <span className="ml-auto bg-yellow-500 text-black text-sm font-semibold px-4 py-2 rounded-md group-hover:bg-yellow-400 group-hover:scale-105 transition">
+                {social.cta}
+              </span>
+            </motion.a>
+          ))}
+        </div>
+      </section>
+
           {/* ================= CONTACT SECTION ================= */}
 <section className="relative bg-[#0a0a0a] text-white py-20 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between overflow-hidden">
   <div className="absolute top-1/2 -right-32 -translate-y-1/2 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl" />
