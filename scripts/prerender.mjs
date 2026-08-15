@@ -65,12 +65,33 @@ try {
 
     for (const route of routes) {
       await page.goto(`${baseUrl}${route}`, { waitUntil: "networkidle" });
-      const html = await page.content();
+
+      // The hero uses a CSS background-image, which the browser's preload
+      // scanner can't see. Find it and emit a <link rel="preload"> so the
+      // download starts during HTML parse instead of after CSS/layout — this
+      // is what the page's Largest Contentful Paint is waiting on.
+      const heroUrl = await page.evaluate(() => {
+        for (const el of document.querySelectorAll("section, div")) {
+          const bg = getComputedStyle(el).backgroundImage;
+          const m = bg && bg.match(/url\(["']?([^"')]+)["']?\)/);
+          if (m) return m[1];
+        }
+        return null;
+      });
+
+      let html = await page.content();
+      if (heroUrl) {
+        const href = new URL(heroUrl, baseUrl).pathname;
+        html = html.replace(
+          "</head>",
+          `  <link rel="preload" as="image" href="${href}" fetchpriority="high">\n</head>`
+        );
+      }
 
       const outDir = route === "/" ? distDir : path.join(distDir, route);
       await mkdir(outDir, { recursive: true });
       await writeFile(path.join(outDir, "index.html"), html);
-      console.log(`Prerendered ${route}`);
+      console.log(`Prerendered ${route}${heroUrl ? " (+hero preload)" : ""}`);
     }
 
     await browser.close();

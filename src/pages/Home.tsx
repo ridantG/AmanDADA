@@ -19,8 +19,8 @@ import {
 import { FaInstagram, FaYoutube } from "react-icons/fa";
 import SEO from "../components/SEO";
 import { SOCIALS } from "../data/site";
-import heroImage from "../assets/background.jpeg";
-import aboutImage from "../assets/about.jpeg";
+import heroImage from "../assets/background.webp";
+import aboutImage from "../assets/about.webp";
 
 const socialLinks = [
   {
@@ -267,7 +267,11 @@ export default function Home() {
         >
           <img
             src={aboutImage}
-            alt="About Aman"
+            alt="Anchor Aman Shinde hosting a wedding event"
+            width={900}
+            height={1200}
+            loading="lazy"
+            decoding="async"
             className="rounded-lg shadow-xl ring-1 ring-black/5 w-full max-w-md object-cover"
           />
         </motion.div>
@@ -519,7 +523,11 @@ export default function Home() {
   <motion.div {...fadeUp} className="relative hidden md:flex md:w-1/2 justify-end">
     <img
       src={aboutImage}
-      alt="Anchor Aman Shinde"
+      alt="Anchor Aman Shinde, wedding anchor and emcee in Delhi"
+      width={900}
+      height={1200}
+      loading="lazy"
+      decoding="async"
       className="max-w-md w-full object-cover rounded-lg shadow-xl ring-1 ring-white/10"
     />
   </motion.div>

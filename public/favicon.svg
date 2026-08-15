@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Anchor Aman Shinde">
+  <rect width="64" height="64" rx="14" fill="#1c1f1c"/>
+  <!-- Microphone mark, echoing the site's yellow accent -->
+  <rect x="25" y="13" width="14" height="24" rx="7" fill="#eab308"/>
+  <path d="M19 30a13 13 0 0 0 26 0" fill="none" stroke="#eab308" stroke-width="4" stroke-linecap="round"/>
+  <path d="M32 43v8" fill="none" stroke="#eab308" stroke-width="4" stroke-linecap="round"/>
+</svg>

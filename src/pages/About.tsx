@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import SEO from "../components/SEO";
-import aboutImage from "../assets/about.jpeg";
+import aboutImage from "../assets/about.webp";
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -24,7 +24,11 @@ export default function About() {
       <motion.div {...fadeUp} className="relative md:w-1/2 w-full flex justify-center mb-8 md:mb-0">
         <img
           src={aboutImage}
-          alt="Anchor Aman Shinde on stage"
+          alt="Anchor Aman Shinde on stage at an event"
+          width={900}
+          height={1200}
+          loading="lazy"
+          decoding="async"
           className="rounded-lg shadow-xl ring-1 ring-black/5 w-full max-w-md object-cover"
         />
       </motion.div>

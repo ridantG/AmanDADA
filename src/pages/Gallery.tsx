@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { X } from "lucide-react";
 import SEO from "../components/SEO";
-import heroImage from "../assets/background.jpeg";
-import aboutImage from "../assets/about.jpeg";
+import heroImage from "../assets/background.webp";
+import aboutImage from "../assets/about.webp";
 
 const photos = [
   { src: heroImage, alt: "Aman Shinde hosting a live event on stage" },
@@ -55,6 +55,8 @@ export default function Gallery() {
             <img
               src={photo.src}
               alt={photo.alt}
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
             />
             <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors" />
