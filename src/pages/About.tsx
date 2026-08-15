@@ -14,8 +14,8 @@ export default function About() {
   return (
     <section className="relative flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-16 bg-white text-gray-800 overflow-hidden">
       <SEO
-        title="About Aman Shinde"
-        description="17+ years, 8,000+ events, and a reputation as Central India's Most Versatile Anchor — the story behind Aman Shinde, The Mic Magician of India."
+        title="Wedding Anchor & Emcee in Delhi"
+        description="Meet Aman Shinde — an experienced, highly rated wedding anchor and professional emcee in Delhi. 17+ years, 8,000+ events, and a reputation as Central India's Most Versatile Anchor."
         path="/about"
       />
       <div className="absolute -top-24 -right-24 w-72 h-72 bg-yellow-500/10 rounded-full blur-3xl" />

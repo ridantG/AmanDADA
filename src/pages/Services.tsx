@@ -99,8 +99,8 @@ export default function Services() {
   return (
     <div className="bg-gray-50 pt-24 pb-16 px-6 md:px-20">
       <SEO
-        title="Services"
-        description="Anchoring, corporate events, décor, private parties, and destination weddings — explore the full range of services from Aman Shinde, The Mic Magician."
+        title="Wedding & Corporate Anchor Services"
+        description="Wedding anchoring, sangeet and haldi hosting, corporate event emceeing, team building and destination weddings — services by Anchor Aman Shinde across Delhi, Gwalior & Indore."
         path="/services"
       />
       {/* PAGE HEADER */}

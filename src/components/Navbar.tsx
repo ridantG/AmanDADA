@@ -2,7 +2,8 @@ import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { Menu, X, Phone, Mail } from "lucide-react"; // for mobile menu icons
-import { FaInstagram, FaWhatsapp, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp, FaYoutube, FaTwitter, FaFacebookF } from "react-icons/fa";
+import { PHONE, PHONE_HREF, EMAIL, SOCIALS, whatsappLink } from "../data/site";
 
 const navLinks = [
   { to: "/", label: "Home" },
@@ -11,7 +12,6 @@ const navLinks = [
   { to: "/gallery", label: "Gallery" },
 ];
 
-const WHATSAPP_NUMBER = "918871871143";
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
@@ -23,19 +23,19 @@ export default function Navbar() {
       <div className="hidden md:block bg-black/30 border-b border-white/5">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-2 text-xs text-gray-300">
           <div className="flex items-center gap-6">
-            <a href="tel:+918871871143" className="flex items-center gap-1.5 hover:text-yellow-500 transition">
-              <Phone size={13} /> +91 8871871143
+            <a href={PHONE_HREF} className="flex items-center gap-1.5 hover:text-yellow-500 transition">
+              <Phone size={13} /> {PHONE}
             </a>
             <a
-              href="mailto:themicmagician@gmail.com"
+              href={`mailto:${EMAIL}`}
               className="flex items-center gap-1.5 hover:text-yellow-500 transition"
             >
-              <Mail size={13} /> themicmagician@gmail.com
+              <Mail size={13} /> {EMAIL}
             </a>
           </div>
           <div className="flex items-center gap-4 text-sm">
             <a
-              href="https://www.instagram.com/anchor_shinde?igsh=MXJ4NnE3NGgzazg1ZQ%3D%3D&utm_source=qr"
+              href={SOCIALS.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -44,7 +44,16 @@ export default function Navbar() {
               <FaInstagram />
             </a>
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Aman, I want to book you for an event.")}`}
+              href={SOCIALS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="hover:text-blue-500 transition-transform hover:scale-110"
+            >
+              <FaFacebookF />
+            </a>
+            <a
+              href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -53,7 +62,7 @@ export default function Navbar() {
               <FaWhatsapp />
             </a>
             <a
-              href="https://youtube.com/@anchorfromdelhi?si=dRkvJWnPMnslOgi3"
+              href={SOCIALS.youtube}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
@@ -62,7 +71,7 @@ export default function Navbar() {
               <FaYoutube />
             </a>
             <a
-              href="https://x.com/anchoramanmp07?s=21"
+              href={SOCIALS.twitter}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter / X"

@@ -3,8 +3,7 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin } from "lucide-react";
 import { FaWhatsapp } from "react-icons/fa";
 import SEO from "../components/SEO";
-
-const WHATSAPP_NUMBER = "918871871143";
+import { PHONE, PHONE_HREF, EMAIL, whatsappLink } from "../data/site";
 
 const fadeUp = {
   initial: { opacity: 0, y: 28 },
@@ -23,8 +22,8 @@ export default function Contact() {
   return (
     <div className="relative min-h-screen bg-[#0a0a0a] text-white px-6 md:px-16 py-20 overflow-hidden">
       <SEO
-        title="Contact"
-        description="Book Aman Shinde, The Mic Magician, for your next event. Call, WhatsApp, or send a message to check availability and get a quote."
+        title="Book a Wedding Anchor in Delhi"
+        description="Book the best wedding anchor in Delhi for your event. Call or WhatsApp Anchor Aman Shinde to check availability and get a quote for weddings, corporate events and destination weddings."
         path="/contact"
       />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-lg h-72 bg-yellow-500/5 rounded-full blur-3xl" />
@@ -45,8 +44,8 @@ export default function Contact() {
             <Phone className="text-yellow-500 shrink-0" size={22} />
             <div>
               <p className="text-sm text-gray-400">Call or WhatsApp</p>
-              <a href="tel:+918871871143" className="font-semibold hover:text-yellow-500 transition">
-                +91 8871871143
+              <a href={PHONE_HREF} className="font-semibold hover:text-yellow-500 transition">
+                {PHONE}
               </a>
             </div>
           </div>
@@ -56,10 +55,10 @@ export default function Contact() {
             <div>
               <p className="text-sm text-gray-400">Email</p>
               <a
-                href="mailto:themicmagician@gmail.com"
+                href={`mailto:${EMAIL}`}
                 className="font-semibold hover:text-yellow-500 transition"
               >
-                themicmagician@gmail.com
+                {EMAIL}
               </a>
             </div>
           </div>
@@ -73,7 +72,7 @@ export default function Contact() {
           </div>
 
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Aman, I want to book you for an event.")}`}
+            href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="flex items-center justify-center gap-2 bg-yellow-500 text-black font-semibold px-6 py-3 rounded-xl hover:bg-yellow-400 hover:scale-105 transition"

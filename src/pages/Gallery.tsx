@@ -23,8 +23,8 @@ export default function Gallery() {
   return (
     <div className="bg-gray-50 pt-24 pb-16 px-6 md:px-16">
       <SEO
-        title="Gallery"
-        description="Photos from Aman Shinde's live hosting — weddings, corporate galas, and celebrity shows on stage across India, Dubai & Singapore."
+        title="Wedding & Event Gallery"
+        description="Photos from live events hosted by wedding anchor Aman Shinde — sangeet nights, weddings, corporate galas and celebrity shows across Delhi, Gwalior, Indore and beyond."
         path="/gallery"
       />
       <motion.div

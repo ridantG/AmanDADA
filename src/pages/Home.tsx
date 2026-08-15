@@ -14,9 +14,11 @@ import {
   Star,
   Landmark,
   Globe,
+  MapPin,
 } from "lucide-react";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
 import SEO from "../components/SEO";
+import { SOCIALS } from "../data/site";
 import heroImage from "../assets/background.jpeg";
 import aboutImage from "../assets/about.jpeg";
 
@@ -26,7 +28,7 @@ const socialLinks = [
     name: "Instagram",
     handle: "@anchor_shinde",
     cta: "Follow",
-    href: "https://www.instagram.com/anchor_shinde?igsh=MXJ4NnE3NGgzazg1ZQ%3D%3D&utm_source=qr",
+    href: SOCIALS.instagram,
     hoverText: "group-hover:text-pink-400",
   },
   {
@@ -34,8 +36,26 @@ const socialLinks = [
     name: "YouTube",
     handle: "@anchorfromdelhi",
     cta: "Subscribe",
-    href: "https://youtube.com/@anchorfromdelhi?si=dRkvJWnPMnslOgi3",
+    href: SOCIALS.youtube,
     hoverText: "group-hover:text-red-500",
+  },
+];
+
+const serviceAreas = [
+  {
+    city: "Delhi & Delhi NCR",
+    blurb:
+      "A trusted anchor and emcee across Delhi NCR — from banquet weddings and sangeet nights to corporate annual meets and product launches.",
+  },
+  {
+    city: "Gwalior",
+    blurb:
+      "An experienced wedding host for Gwalior and nearby cities, covering haldi, mehendi, varmala ceremonies and full wedding-day stage flow.",
+  },
+  {
+    city: "Indore & Madhya Pradesh",
+    blurb:
+      "Hosting weddings and corporate shows across Indore, Bhopal, Ujjain, Jabalpur and the wider Madhya Pradesh region.",
   },
 ];
 
@@ -189,8 +209,8 @@ export default function Home() {
   return (
     <div className="bg-gray-50">
       <SEO
-        title="Anchor Aman Shinde | The Mic Magician of India"
-        description="Celebrity anchor Aman Shinde brings 17+ years of experience hosting weddings, corporate galas, and celebrity shows across India, Dubai & Singapore."
+        title="Best Wedding Anchor in Delhi | Anchor Aman Shinde"
+        description="Best wedding anchor in Delhi with 17+ years of experience. Professional emcee and event host for sangeet, haldi, varmala, corporate events and destination weddings in Delhi, Gwalior & Indore."
         path="/"
       />
       {/* ================= HERO SECTION ================= */}
@@ -335,6 +355,46 @@ export default function Home() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* ================= SERVICE AREAS SECTION ================= */}
+      <section className="py-20 px-6 md:px-16 bg-white">
+        <motion.div {...fadeUp} className="max-w-3xl mx-auto text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#737874] mb-4">
+            Wedding Anchor in Delhi, Gwalior &amp; Indore
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
+            Looking for a professional wedding anchor near you? Aman Shinde hosts weddings,
+            sangeet and cocktail nights, haldi and mehendi functions, varmala and couple
+            entries, corporate events and destination weddings — bringing the same energy to a
+            300-guest ballroom as to an intimate family gathering.
+          </p>
+        </motion.div>
+
+        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
+          {serviceAreas.map((area) => (
+            <motion.div
+              key={area.city}
+              {...fadeUp}
+              className="bg-gray-50 border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition"
+            >
+              <div className="flex items-center gap-2 mb-3">
+                <MapPin className="text-yellow-500 shrink-0" size={20} />
+                <h3 className="font-display text-xl font-bold text-[#737874]">{area.city}</h3>
+              </div>
+              <p className="text-gray-600 text-sm leading-relaxed">{area.blurb}</p>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p {...fadeUp} className="max-w-3xl mx-auto text-center text-gray-600 mt-10 leading-relaxed">
+          Also available as a corporate event emcee, team building host and virtual event
+          anchor — plus destination weddings across India, Dubai and Singapore.{" "}
+          <Link to="/contact" className="text-yellow-600 font-semibold hover:underline">
+            Check availability for your date
+          </Link>
+          .
+        </motion.p>
       </section>
 
       {/* ================= PROJECT STATS SECTION ================= */}

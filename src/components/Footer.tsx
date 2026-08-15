@@ -1,8 +1,7 @@
 import { Link } from "react-router-dom";
-import { FaInstagram, FaWhatsapp, FaYoutube, FaTwitter } from "react-icons/fa";
+import { FaInstagram, FaWhatsapp, FaYoutube, FaTwitter, FaFacebookF } from "react-icons/fa";
 import { MapPin, Phone, Mail } from "lucide-react";
-
-const WHATSAPP_NUMBER = "918871871143";
+import { PHONE, PHONE_HREF, EMAIL, SOCIALS, whatsappLink } from "../data/site";
 
 export default function Footer() {
   return (
@@ -23,7 +22,7 @@ export default function Footer() {
           {/* Social Icons */}
           <div className="flex space-x-4 mt-5">
             <a
-              href="https://www.instagram.com/anchor_shinde?igsh=MXJ4NnE3NGgzazg1ZQ%3D%3D&utm_source=qr"
+              href={SOCIALS.instagram}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Instagram"
@@ -33,7 +32,17 @@ export default function Footer() {
             </a>
 
             <a
-              href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Aman, I want to book you for an event.")}`}
+              href={SOCIALS.facebook}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Facebook"
+              className="text-gray-300 hover:text-blue-500 text-2xl transition-transform hover:scale-110"
+            >
+              <FaFacebookF />
+            </a>
+
+            <a
+              href={whatsappLink()}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="WhatsApp"
@@ -43,7 +52,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://youtube.com/@anchorfromdelhi?si=dRkvJWnPMnslOgi3"
+              href={SOCIALS.youtube}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="YouTube"
@@ -53,7 +62,7 @@ export default function Footer() {
             </a>
 
             <a
-              href="https://x.com/anchoramanmp07?s=21"
+              href={SOCIALS.twitter}
               target="_blank"
               rel="noopener noreferrer"
               aria-label="Twitter / X"
@@ -85,14 +94,14 @@ export default function Footer() {
             </li>
             <li className="flex items-center gap-2">
               <Phone size={16} className="text-yellow-500 shrink-0" />
-              <a href="tel:+918871871143" className="hover:text-yellow-500 transition">
-                +91 8871871143
+              <a href={PHONE_HREF} className="hover:text-yellow-500 transition">
+                {PHONE}
               </a>
             </li>
             <li className="flex items-center gap-2">
               <Mail size={16} className="text-yellow-500 shrink-0" />
-              <a href="mailto:themicmagician@gmail.com" className="hover:text-yellow-500 transition">
-                themicmagician@gmail.com
+              <a href={`mailto:${EMAIL}`} className="hover:text-yellow-500 transition">
+                {EMAIL}
               </a>
             </li>
           </ul>
@@ -102,7 +111,7 @@ export default function Footer() {
         <div>
           <h3 className="text-white font-semibold text-lg mb-4">Book Me Now</h3>
           <a
-            href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent("Hi Aman, I want to book you for an event.")}`}
+            href={whatsappLink()}
             target="_blank"
             rel="noopener noreferrer"
             className="bg-yellow-500 text-black px-6 py-3 rounded-md font-semibold block text-center hover:bg-yellow-400 hover:scale-105 transition"
