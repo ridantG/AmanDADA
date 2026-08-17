@@ -15,6 +15,10 @@ import {
   Landmark,
   Globe,
   MapPin,
+  BookOpen,
+  Disc3,
+  ShieldCheck,
+  Zap,
 } from "lucide-react";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
 import SEO from "../components/SEO";
@@ -38,6 +42,33 @@ const socialLinks = [
     cta: "Subscribe",
     href: SOCIALS.youtube,
     hoverText: "group-hover:text-red-500",
+  },
+];
+
+const differentiators = [
+  {
+    icon: BookOpen,
+    title: "Storyteller, Not Scriptwriter",
+    blurb:
+      "Every family, every couple, every occasion is different — Aman builds the entertainment around the people in the room, not a repeated script.",
+  },
+  {
+    icon: Disc3,
+    title: "Signature Games & Concepts",
+    blurb:
+      "From the Wheel of Fortune at Haldi to the Varmala presented as Shiv-Shakti Milan — moments designed to be remembered, not just announced.",
+  },
+  {
+    icon: ShieldCheck,
+    title: "Family-Friendly, Always",
+    blurb:
+      "Energy and humor that entertain kids, parents, and grandparents in the same room — no vulgar jokes, no mocking anyone for a laugh.",
+  },
+  {
+    icon: Zap,
+    title: "Steady Under Pressure",
+    blurb:
+      "17+ years of live events means delays, last-minute changes, and surprises get handled on the spot — guests never feel it.",
   },
 ];
 
@@ -171,7 +202,7 @@ export default function Home() {
 
         const duration = 2000;
         const start = performance.now();
-        const finalValues = { events: 8000, clients: 5000, years: 17, awards: 25 };
+        const finalValues = { events: 5000, clients: 5000, years: 17, awards: 25 };
 
         const animate = (time: number) => {
           const progress = Math.min((time - start) / duration, 1);
@@ -247,7 +278,7 @@ export default function Home() {
     <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-white/80 uppercase tracking-wide">
       <span>17+ Years Experience</span>
       <span className="text-yellow-500">•</span>
-      <span>8000+ Events Hosted</span>
+      <span>5000+ Events Hosted</span>
       <span className="text-yellow-500">•</span>
       <span>India · Dubai · Singapore</span>
     </div>
@@ -297,6 +328,45 @@ export default function Home() {
             Read More
           </Link>
         </motion.div>
+      </section>
+
+      {/* ================= WHAT MAKES HIM DIFFERENT SECTION ================= */}
+      <section className="py-20 px-6 md:px-16 bg-gray-50">
+        <motion.div {...fadeUp} className="max-w-2xl mx-auto text-center mb-12">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#737874] mb-4">
+            What Makes Him Different
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
+            Anyone can speak on a mic. What sets Aman apart is knowing when to make people laugh,
+            when to create emotion, and when to simply let the moment speak for itself.
+          </p>
+        </motion.div>
+
+        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {differentiators.map((item) => (
+            <motion.div
+              key={item.title}
+              {...fadeUp}
+              className="flex gap-4 bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition"
+            >
+              <div className="w-12 h-12 rounded-lg bg-yellow-500/10 flex items-center justify-center shrink-0">
+                <item.icon className="text-yellow-500" size={24} />
+              </div>
+              <div>
+                <h3 className="font-display text-lg font-bold text-[#737874] mb-1">{item.title}</h3>
+                <p className="text-gray-600 text-sm leading-relaxed">{item.blurb}</p>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.p
+          {...fadeUp}
+          className="font-display text-xl md:text-2xl text-center text-[#737874] italic max-w-2xl mx-auto mt-14"
+        >
+          "Not just an anchor for your event — the voice, energy, and storyteller behind your
+          celebration."
+        </motion.p>
       </section>
 
       {/* ================= HOW WE DO IT SECTION ================= */}
