@@ -11,6 +11,8 @@ import About from "./pages/About";
 import Services from "./pages/Services";
 import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
+import EventDetails from "./pages/EventDetails";
+import EventMoment from "./pages/EventMoment";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -36,6 +38,8 @@ export default function App() {
             <Route path="/services" element={<Services />} />
             <Route path="/gallery" element={<Gallery />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/event-details" element={<EventDetails />} />
+            <Route path="/event-moment" element={<EventMoment />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />
