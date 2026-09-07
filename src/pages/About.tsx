@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Disc3, Mic2, Flame, ShieldCheck } from "lucide-react";
+import { CheckCircle2 } from "lucide-react";
 import SEO from "../components/SEO";
 import aboutImage from "../assets/about.webp";
 
@@ -11,40 +11,45 @@ const fadeUp = {
   transition: { duration: 0.6, ease: "easeOut" },
 } as const;
 
-const signatureMoments = [
-  {
-    icon: Disc3,
-    title: "The Wheel of Fortune",
-    blurb:
-      "A signature Haldi and wedding game that turns anticipation into participation — guests don't just watch, they play.",
-  },
-  {
-    icon: Mic2,
-    title: "Ladies Sangeet, Told as a Story",
-    blurb:
-      "Humor, family stories, and audience interaction woven into one performance, not a run of announcements.",
-  },
-  {
-    icon: Flame,
-    title: "Varmala as Shiv-Shakti Milan",
-    blurb:
-      "The Varmala presented through the traditional Shiv-Shakti Milan and Adi Shakti concept — a ritual given its full emotional weight, not just narrated.",
-  },
+const weddingFunctions = [
+  "Haldi Function Anchor",
+  "Mehendi Anchor",
+  "Anchor for Sangeet",
+  "Anchor for Engagement Ceremony",
+  "Ring Ceremony Anchor",
+  "Varmala / Jaimala Anchor",
+  "Wedding Anchor",
+  "Wedding Host",
+  "Destination Wedding Anchor",
+];
+
+const whyChoose = [
+  "17+ years of professional anchoring experience",
+  "5,000+ live shows",
+  "Extensive wedding and event hosting experience",
+  "Strong expertise in Delhi NCR weddings",
+  "Available for Pan India & destination weddings",
+  "Exceptional crowd engagement and interaction",
+  "Powerful stage presence and spontaneous hosting",
+  "Ability to handle diverse audiences and live situations",
+  "Hosting in Hindi & English",
+  "Professional coordination with planners, performers and production teams",
+  "Personalised hosting rather than a one-size-fits-all script",
 ];
 
 export default function About() {
   return (
     <>
       <SEO
-        title="Wedding Anchor & Emcee in Delhi"
-        description="Meet Aman Shinde — an experienced, highly rated wedding anchor and professional emcee in Delhi. 17+ years, 5,000+ events, and a reputation as Central India's Most Versatile Anchor."
+        title="Best Wedding Anchor in Delhi NCR | Anchor Aman Shinde"
+        description="Anchor Aman Shinde – The Mic Magician is a professional Wedding Anchor and Event Host in New Delhi with 17+ years of experience and 5,000+ live shows across weddings, destination celebrations and corporate events."
         path="/about"
       />
 
+      {/* ================= INTRO / HERO ================= */}
       <section className="relative flex flex-col md:flex-row items-center justify-center py-16 px-6 md:px-16 bg-white text-gray-800 overflow-hidden">
         <div className="absolute -top-24 -right-24 w-72 h-72 bg-yellow-500/10 rounded-full blur-3xl" />
 
-        {/* Left Image */}
         <motion.div {...fadeUp} className="relative md:w-1/2 w-full flex justify-center mb-8 md:mb-0">
           <img
             src={aboutImage}
@@ -57,34 +62,30 @@ export default function About() {
           />
         </motion.div>
 
-        {/* Right Text Content */}
         <motion.div {...fadeUp} className="relative md:w-1/2 w-full md:pl-12">
-          <h3 className="text-sm font-semibold text-yellow-500 uppercase mb-2">
-            About Anchor Aman Shinde
-          </h3>
+          <h3 className="text-sm font-semibold text-yellow-500 uppercase mb-2">About Me</h3>
           <h1 className="font-display text-3xl md:text-4xl font-bold mb-4 text-[#737874]">
-            Anchor in Delhi | Top Wedding Anchor in India
+            Anchor Aman Shinde – The Mic Magician
+            <span className="block text-xl md:text-2xl mt-1 text-yellow-600">
+              Best Wedding Anchor in Delhi NCR
+            </span>
           </h1>
           <p className="text-gray-600 leading-relaxed mb-4">
-            Friends and clients call him "The Mic Magician of India" — Aman Shinde has spent the last
-            17 years, since 2008, on stage as a celebrity anchor, emcee, and comedian host. That's
-            turned into 5,000-plus live shows and 1,000-plus recorded events, for more than 500 event
-            companies across India, Dubai, and Singapore. It's also how he came to be known as Central
-            India's Most Versatile Anchor.
+            Anchor Aman Shinde – The Mic Magician is a professional Wedding Anchor and Event Host in
+            New Delhi, recognised for his powerful stage presence, exceptional audience engagement and
+            17+ years of experience in live event hosting.
+          </p>
+          <p className="text-gray-600 leading-relaxed mb-4">
+            With 5,000+ live shows and experience across weddings, destination celebrations, corporate
+            events, public events, college events and large-scale productions, Aman has established
+            himself as a trusted choice for clients looking for a Best Wedding Anchor in Delhi NCR and
+            an experienced Wedding Anchor in Delhi.
           </p>
           <p className="text-gray-600 leading-relaxed mb-6">
-            He's just as comfortable hosting a wedding as he is a corporate gala or a film promotion —
-            he's shared the stage for releases like Student of the Year and Bajrangi Bhaijaan, and
-            fronted national campaigns such as the Swachh Bharat Mission. Wherever the event, he shows
-            up with the same energy and reads the room the same way, whether it's a family sitting down
-            for Haldi or a boardroom full of executives.
-          </p>
-          <p className="text-gray-600 leading-relaxed mb-6">
-            What people tend to remember most isn't the resume, though — it's how quickly he makes a
-            room feel at ease. Years of doing this have taught him when to bring the humor up and when
-            to let a moment breathe, and that's the part no highlight reel really captures. As one
-            client put it, "he doesn't just hold the mic — he holds hearts, attention, and energy, all
-            at once."
+            His expertise goes far beyond making announcements. Aman understands how to read the crowd,
+            control the energy, connect families, involve guests, manage the flow of ceremonies and
+            create memorable moments in real time. His ability to combine entertainment, spontaneity,
+            humour, elegance and emotion allows him to adapt his hosting style to every celebration.
           </p>
           <Link
             to="/contact"
@@ -95,77 +96,109 @@ export default function About() {
         </motion.div>
       </section>
 
-      {/* ================= SIGNATURE MOMENTS SECTION ================= */}
-      <section className="py-20 px-6 md:px-16 bg-linear-to-br from-[#1c1f1c] via-[#242824] to-[#3a3d3a] text-white text-center">
-        <motion.div {...fadeUp} className="max-w-2xl mx-auto mb-12">
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-            Not a One-Format-Fits-All Script
+      {/* ================= LONG-FORM ================= */}
+      <section className="py-16 px-6 md:px-0 bg-gray-50">
+        <div className="max-w-3xl mx-auto text-gray-700 leading-relaxed">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#737874] mb-4">
+            Wedding Anchor for Every Celebration
           </h2>
-          <p className="text-white/70 leading-relaxed">
-            Every wedding has its own family, emotions, traditions, and story. Aman builds the
-            entertainment around the people in the room — these are a few of the signature moments he
-            brings to the stage.
+          <p className="mb-4">
+            Aman specialises in hosting a wide range of wedding functions, including:
           </p>
-        </motion.div>
-
-        <div className="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6">
-          {signatureMoments.map((moment) => (
-            <motion.div
-              key={moment.title}
-              {...fadeUp}
-              className="bg-white/5 backdrop-blur-md ring-1 ring-white/10 rounded-2xl p-6 text-left hover:-translate-y-1 hover:ring-yellow-500/50 transition"
-            >
-              <div className="w-12 h-12 rounded-lg bg-yellow-500/15 flex items-center justify-center mb-4">
-                <moment.icon className="text-yellow-400" size={24} />
-              </div>
-              <h3 className="font-display text-lg font-bold mb-2">{moment.title}</h3>
-              <p className="text-white/70 text-sm leading-relaxed">{moment.blurb}</p>
-            </motion.div>
-          ))}
-        </div>
-      </section>
-
-      {/* ================= FAMILY ANCHOR SECTION ================= */}
-      <section className="py-20 px-6 md:px-16 bg-white">
-        <motion.div {...fadeUp} className="max-w-3xl mx-auto text-center">
-          <div className="w-14 h-14 rounded-full bg-yellow-500/10 flex items-center justify-center mx-auto mb-6">
-            <ShieldCheck className="text-yellow-500" size={28} />
-          </div>
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#737874] mb-4">
-            A Family Anchor, Not Just a Funny One
-          </h2>
-          <p className="text-gray-600 leading-relaxed mb-6">
-            A wedding anchor represents the family on stage. Aman's hosting is built to entertain
-            kids, parents, and grandparents in the same room — no vulgar jokes, no mocking someone's
-            looks, profession, or choices for a cheap laugh. The energy comes from presence of mind,
-            timing, and reading the room, not shock value.
-          </p>
-          <div className="flex flex-wrap justify-center gap-3">
-            {["Respectful", "Elegant", "All-Ages Friendly"].map((tag) => (
-              <span
-                key={tag}
-                className="text-sm font-semibold text-yellow-700 bg-yellow-500/10 px-4 py-2 rounded-full"
-              >
-                {tag}
-              </span>
+          <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 mb-4 list-disc pl-5">
+            {weddingFunctions.map((f) => (
+              <li key={f}>{f}</li>
             ))}
-          </div>
-        </motion.div>
-      </section>
+          </ul>
+          <p className="mb-4">
+            Whether you are searching for a Haldi Anchor in Delhi, Sangeet Anchor, Varmala Anchor,
+            Wedding Host or Destination Wedding Anchor, Aman brings professional experience and a
+            personalised hosting approach to every event.
+          </p>
+          <p className="mb-4">
+            For couples and families searching for a Wedding Anchor Near Me, Wedding Anchor in Delhi
+            NCR or an experienced Wedding Anchor for Marriage, Aman offers professional hosting
+            designed around the couple, family, guests and overall celebration.
+          </p>
 
-      {/* ================= PHILOSOPHY QUOTE SECTION ================= */}
-      <section className="py-20 px-6 md:px-16 bg-[#0a0a0a] text-white text-center">
-        <motion.blockquote {...fadeUp} className="max-w-3xl mx-auto">
-          <p className="font-display text-xl md:text-2xl leading-relaxed text-white/90 italic mb-6">
-            "A professional anchor controls a stage. An experienced anchor handles a crowd. A great
-            family anchor knows when to make people laugh, when to create emotion, when to tell a
-            story — and when to simply let the moment speak for itself."
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#737874] mt-12 mb-4">
+            Destination Wedding Anchor
+          </h2>
+          <p className="mb-4">
+            Aman is also available as a Destination Wedding Anchor across India. From intimate
+            celebrations to grand luxury weddings, his experience enables him to work confidently with
+            diverse audiences, wedding planners, choreographers, DJs, performers and production teams.
           </p>
-          <p className="text-yellow-500 font-semibold">
-            Not just an anchor for your event — the voice, energy, and storyteller behind your
-            celebration.
+          <p className="mb-4">
+            His destination wedding hosting combines energy, elegance, audience interaction and
+            seamless event flow, ensuring that every ceremony feels engaging rather than routine.
           </p>
-        </motion.blockquote>
+
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#737874] mt-12 mb-4">
+            More Than Just an Anchor
+          </h2>
+          <p className="mb-4">A great wedding anchor is not simply the person holding the mic.</p>
+          <p className="mb-4">
+            The right anchor becomes the voice, energy and connection of the celebration.
+          </p>
+          <p className="mb-4">
+            Aman knows when to raise the energy, when to create laughter, when to bring emotion into
+            the moment and when to step back and let the celebration speak for itself. His strength is
+            his ability to remain spontaneous while keeping the event professionally controlled.
+          </p>
+          <p className="mb-4">
+            That is why clients looking for the Best Anchor for Wedding, Best Wedding Emcee,
+            Professional Wedding Host or Experienced Event Anchor choose a host who understands both
+            entertainment and event flow.
+          </p>
+
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#737874] mt-12 mb-4">
+            Why Choose Anchor Aman Shinde?
+          </h2>
+          <ul className="space-y-2 mb-4">
+            {whyChoose.map((item) => (
+              <li key={item} className="flex gap-2">
+                <CheckCircle2 className="text-yellow-500 shrink-0 mt-0.5" size={18} />
+                <span>{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#737874] mt-12 mb-4">
+            The Aman Shinde Experience
+          </h2>
+          <p className="mb-4">
+            From the first announcement to the final celebration, every moment matters.
+          </p>
+          <p className="mb-4">
+            Whether you need a Wedding Anchor in New Delhi, a Wedding Anchor in Delhi NCR, a
+            Destination Wedding Host in India, a Haldi Anchor, a Sangeet Host, a Varmala Anchor or a
+            professional Event Anchor, Aman brings experience, confidence and personality to the
+            stage.
+          </p>
+          <p className="mb-8">
+            Based in New Delhi, available across Delhi NCR, Gwalior and Indore — and Pan India for
+            destination weddings.
+          </p>
+
+          <div className="border-t border-gray-200 pt-8 text-center">
+            <p className="font-display text-xl md:text-2xl font-bold text-[#737874]">
+              Anchor Aman Shinde – The Mic Magician
+            </p>
+            <p className="text-yellow-600 font-semibold mt-2">
+              17+ Years. 5,000+ Live Shows. One Mic. Countless Memories.
+            </p>
+            <p className="text-gray-600 italic mt-2">
+              Not just an anchor. The energy behind your celebration.
+            </p>
+            <Link
+              to="/contact"
+              className="mt-6 inline-block bg-yellow-500 hover:bg-yellow-400 hover:scale-105 text-black font-semibold px-6 py-3 rounded-md transition"
+            >
+              Book Anchor Aman Shinde
+            </Link>
+          </div>
+        </div>
       </section>
     </>
   );

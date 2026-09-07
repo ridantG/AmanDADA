@@ -8,6 +8,7 @@ import { PHONE, PHONE_HREF, EMAIL, SOCIALS, whatsappLink } from "../data/site";
 const navLinks = [
   { to: "/", label: "Home" },
   { to: "/about", label: "About" },
+  { to: "/why-aman-shinde", label: "Why Aman" },
   { to: "/services", label: "Services" },
   { to: "/gallery", label: "Gallery" },
 ];

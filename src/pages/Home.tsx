@@ -15,16 +15,14 @@ import {
   Landmark,
   Globe,
   MapPin,
-  BookOpen,
-  Disc3,
-  ShieldCheck,
-  Zap,
 } from "lucide-react";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
 import SEO from "../components/SEO";
+import WhyAmanContent from "../components/WhyAmanContent";
 import { SOCIALS } from "../data/site";
-import heroImage from "../assets/background.webp";
 import aboutImage from "../assets/about.webp";
+
+const heroImage = "/main-photo.jpeg";
 
 const socialLinks = [
   {
@@ -42,33 +40,6 @@ const socialLinks = [
     cta: "Subscribe",
     href: SOCIALS.youtube,
     hoverText: "group-hover:text-red-500",
-  },
-];
-
-const differentiators = [
-  {
-    icon: BookOpen,
-    title: "Storyteller, Not Scriptwriter",
-    blurb:
-      "Every family, every couple, every occasion is different — Aman builds the entertainment around the people in the room, not a repeated script.",
-  },
-  {
-    icon: Disc3,
-    title: "Signature Games & Concepts",
-    blurb:
-      "From the Wheel of Fortune at Haldi to the Varmala presented as Shiv-Shakti Milan — moments designed to be remembered, not just announced.",
-  },
-  {
-    icon: ShieldCheck,
-    title: "Family-Friendly, Always",
-    blurb:
-      "Energy and humor that entertain kids, parents, and grandparents in the same room — no vulgar jokes, no mocking anyone for a laugh.",
-  },
-  {
-    icon: Zap,
-    title: "Steady Under Pressure",
-    blurb:
-      "17+ years of live events means delays, last-minute changes, and surprises get handled on the spot — guests never feel it.",
   },
 ];
 
@@ -246,24 +217,26 @@ export default function Home() {
       />
       {/* ================= HERO SECTION ================= */}
       <section
-  className="relative h-screen flex items-center justify-center bg-cover bg-center"
+  className="relative min-h-screen flex flex-col items-center justify-between bg-cover bg-top sm:bg-center pt-10 pb-20"
   style={{ backgroundImage: `url(${heroImage})` }}
 >
-  <div className="absolute inset-0 bg-linear-to-b from-black/70 via-black/70 to-black/90"></div>
+  <div className="absolute inset-0 bg-linear-to-b from-black/10 via-transparent to-black/30"></div>
 
-  <div className="relative z-10 text-center text-white px-4 animate-[fadeIn_1s_ease-out]">
+  <div className="relative z-10 text-center text-white px-4 animate-[fadeIn_1s_ease-out] [text-shadow:0_2px_12px_rgba(0,0,0,0.6)]">
     <p className="text-sm md:text-base uppercase tracking-[0.2em] text-yellow-400 mb-4 font-medium">
       Anchor | Wedding Anchor | Entertainer | Emcee
     </p>
 
-    <h1 className="font-display text-5xl md:text-7xl font-extrabold mb-6 tracking-tight drop-shadow-lg">
+    <h1 className="font-display text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-lg">
       THE MIC <span className="text-yellow-500">MAGICIAN</span>
     </h1>
+  </div>
 
-    <div className="flex flex-wrap items-center justify-center gap-4 mb-12">
+  <div className="relative z-10 text-center text-white px-4 [text-shadow:0_2px_12px_rgba(0,0,0,0.6)]">
+    <div className="flex flex-wrap items-center justify-center gap-4 mb-8">
       <Link
         to="/contact"
-        className="bg-yellow-500 text-black font-semibold px-8 py-3 rounded-md hover:bg-yellow-400 hover:scale-105 transition inline-block shadow-lg shadow-yellow-500/20"
+        className="bg-white/10 backdrop-blur-sm border border-white/50 text-white font-semibold px-8 py-3 rounded-md hover:bg-yellow-500 hover:text-black hover:border-yellow-500 hover:scale-105 transition inline-block"
       >
         Contact Now
       </Link>
@@ -275,16 +248,16 @@ export default function Home() {
       </Link>
     </div>
 
-    <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-white/80 uppercase tracking-wide">
+    <div className="flex flex-wrap items-center justify-center gap-x-8 gap-y-2 text-sm text-white/90 uppercase tracking-wide">
       <span>17+ Years Experience</span>
       <span className="text-yellow-500">•</span>
       <span>5000+ Events Hosted</span>
       <span className="text-yellow-500">•</span>
       <span>India · Dubai · Singapore</span>
     </div>
-  </div>
 
-  <ChevronDown className="absolute bottom-8 left-1/2 -translate-x-1/2 text-yellow-400 animate-bounce" size={32} />
+    <ChevronDown className="mx-auto mt-8 text-yellow-400 animate-bounce" size={32} />
+  </div>
 </section>
 
 
@@ -332,41 +305,7 @@ export default function Home() {
 
       {/* ================= WHAT MAKES HIM DIFFERENT SECTION ================= */}
       <section className="py-20 px-6 md:px-16 bg-gray-50">
-        <motion.div {...fadeUp} className="max-w-2xl mx-auto text-center mb-12">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#737874] mb-4">
-            What Makes Him Different
-          </h2>
-          <p className="text-gray-600 leading-relaxed">
-            Anyone can speak on a mic. What sets Aman apart is knowing when to make people laugh,
-            when to create emotion, and when to simply let the moment speak for itself.
-          </p>
-        </motion.div>
-
-        <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
-          {differentiators.map((item) => (
-            <motion.div
-              key={item.title}
-              {...fadeUp}
-              className="flex gap-4 bg-white border border-gray-200 rounded-xl p-6 hover:shadow-lg hover:-translate-y-1 transition"
-            >
-              <div className="w-12 h-12 rounded-lg bg-yellow-500/10 flex items-center justify-center shrink-0">
-                <item.icon className="text-yellow-500" size={24} />
-              </div>
-              <div>
-                <h3 className="font-display text-lg font-bold text-[#737874] mb-1">{item.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{item.blurb}</p>
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        <motion.p
-          {...fadeUp}
-          className="font-display text-xl md:text-2xl text-center text-[#737874] italic max-w-2xl mx-auto mt-14"
-        >
-          "Not just an anchor for your event — the voice, energy, and storyteller behind your
-          celebration."
-        </motion.p>
+        <WhyAmanContent readMoreHref="/why-aman-shinde" />
       </section>
 
       {/* ================= HOW WE DO IT SECTION ================= */}

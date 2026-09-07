@@ -13,6 +13,8 @@ import Gallery from "./pages/Gallery";
 import Contact from "./pages/Contact";
 import EventDetails from "./pages/EventDetails";
 import EventMoment from "./pages/EventMoment";
+import QuickLink from "./pages/QuickLink";
+import WhyAman from "./pages/WhyAman";
 import NotFound from "./pages/NotFound";
 
 function ScrollToTop() {
@@ -40,6 +42,8 @@ export default function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/event-details" element={<EventDetails />} />
             <Route path="/event-moment" element={<EventMoment />} />
+            <Route path="/why-aman-shinde" element={<WhyAman />} />
+            <Route path="/l/:slug" element={<QuickLink />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
           <Footer />

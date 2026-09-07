@@ -1,4 +1,6 @@
 import { useEffect } from "react";
+import { KEYWORDS, KEYWORDS_META } from "../data/keywords";
+import { SOCIALS } from "../data/site";
 
 export const SITE_URL = "https://anchor-aman-shinde.shaadisamadhan.com";
 const SITE_NAME = "Anchor Aman Shinde";
@@ -24,6 +26,31 @@ function setCanonical(href: string) {
   link.setAttribute("href", href);
 }
 
+// Person schema — the machine-readable version of the keyword list. `knowsAbout`
+// carries the topics without stuffing them into visible copy.
+function setJsonLd() {
+  const id = "ld-person";
+  let tag = document.getElementById(id) as HTMLScriptElement | null;
+  if (!tag) {
+    tag = document.createElement("script");
+    tag.id = id;
+    tag.type = "application/ld+json";
+    document.head.appendChild(tag);
+  }
+  tag.textContent = JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "Person",
+    name: "Aman Shinde",
+    alternateName: "The Mic Magician",
+    jobTitle: "Event Anchor & Emcee",
+    url: SITE_URL,
+    image: DEFAULT_IMAGE,
+    sameAs: Object.values(SOCIALS),
+    knowsAbout: KEYWORDS,
+    areaServed: ["Delhi NCR", "Gwalior", "Indore", "India"],
+  });
+}
+
 interface SEOProps {
   title: string;
   description: string;
@@ -38,8 +65,10 @@ export default function SEO({ title, description, path, noindex }: SEOProps) {
 
     document.title = fullTitle;
     setMeta("name", "description", description);
+    setMeta("name", "keywords", KEYWORDS_META);
     setMeta("name", "robots", noindex ? "noindex, nofollow" : "index, follow");
     setCanonical(url);
+    setJsonLd();
 
     setMeta("property", "og:title", fullTitle);
     setMeta("property", "og:description", description);

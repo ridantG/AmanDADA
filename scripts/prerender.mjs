@@ -11,7 +11,7 @@ import { mkdir, writeFile } from "node:fs/promises";
 import path from "node:path";
 import { chromium } from "playwright";
 
-const routes = ["/", "/about", "/services", "/gallery", "/contact"];
+const routes = ["/", "/about", "/why-aman-shinde", "/services", "/gallery", "/contact"];
 const port = 4173;
 const baseUrl = `http://localhost:${port}`;
 const distDir = path.resolve(import.meta.dirname, "..", "dist");

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { FaInstagram, FaWhatsapp, FaYoutube, FaTwitter, FaFacebookF } from "react-icons/fa";
 import { MapPin, Phone, Mail } from "lucide-react";
 import { PHONE, PHONE_HREF, EMAIL, SOCIALS, whatsappLink } from "../data/site";
+import { QUICK_LINKS, slugify } from "../data/quickLinks";
 
 export default function Footer() {
   return (
@@ -79,6 +80,7 @@ export default function Footer() {
           <ul className="space-y-3">
             <li><Link to="/event-details" className="hover:text-yellow-500 transition">Event Details</Link></li>
             <li><Link to="/about" className="hover:text-yellow-500 transition">About Us</Link></li>
+            <li><Link to="/why-aman-shinde" className="hover:text-yellow-500 transition">Why Anchor Aman Shinde</Link></li>
             <li><Link to="/event-moment" className="hover:text-yellow-500 transition">Event Moment</Link></li>
             <li><Link to="/services" className="hover:text-yellow-500 transition">Services</Link></li>
             <li><Link to="/contact" className="hover:text-yellow-500 transition">Contact Us</Link></li>
@@ -120,6 +122,23 @@ export default function Footer() {
           </a>
         </div>
 
+      </div>
+
+      {/* SEO QUICK LINKS */}
+      <div className="max-w-7xl mx-auto mt-12">
+        <h3 className="text-white font-semibold text-lg mb-4">Quick Links</h3>
+        <ul className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-8 gap-y-2 text-sm">
+          {QUICK_LINKS.map((label) => (
+            <li key={label}>
+              <Link
+                to={`/l/${slugify(label)}`}
+                className="text-gray-400 hover:text-yellow-500 transition"
+              >
+                {label}
+              </Link>
+            </li>
+          ))}
+        </ul>
       </div>
 
       <hr className="border-gray-700 my-8" />

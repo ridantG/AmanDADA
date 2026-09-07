@@ -2,7 +2,7 @@
 // Used by the Navbar top bar, Footer, and Contact page.
 export const PHONE = "+91 8871871143";
 export const PHONE_HREF = "tel:+918871871143";
-export const EMAIL = "themicmagician@gmail.com";
+export const EMAIL = "anchoramanshinde@shaadisamadhan.com";
 export const WHATSAPP_NUMBER = "918871871143";
 
 export const whatsappLink = (
