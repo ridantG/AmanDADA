@@ -3,11 +3,55 @@
 
 @theme {
   --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Playfair Display", ui-serif, serif;
+  --font-display: "Playfair Display", ui-serif, Georgia, serif;
+
+  /* Luxe editorial palette — remaps the yellow/gray utilities the whole
+     site already uses, so the new look propagates without touching pages. */
+  --color-yellow-400: #f5c74a; /* bright highlight gold — hover / hero eyebrow */
+  --color-yellow-500: #e3a72c; /* rich luminous gold — buttons, accents, rules */
+  --color-yellow-600: #b87d18; /* deep amber gold — text on light, hovers */
+
+  --color-gray-50: #fdfbf6; /* bright warm white page ground */
+  --color-gray-100: #f6f0e4; /* soft cream */
+
+  --color-ink: #201c16; /* deep warm near-black for headings/body */
 }
 
 html {
   font-family: var(--font-sans);
+  scroll-behavior: smooth;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-gray-50);
+    color: var(--color-ink);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+
+  ::selection {
+    background-color: var(--color-yellow-500);
+    color: #fff;
+  }
+}
+
+/* Thin gold editorial rule */
+.rule-gold {
+  border: 0;
+  height: 1px;
+  width: 4rem;
+  background-color: var(--color-yellow-500);
 }
 
 @keyframes fadeIn {
@@ -37,4 +81,3 @@ html {
 .scrollbar-hide::-webkit-scrollbar {
   display: none; /* Chrome, Safari */
 }
-

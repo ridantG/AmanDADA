@@ -5,14 +5,16 @@ import { Link } from "react-router-dom";
 export default function WhyAmanContent({
   heading = "h2",
   readMoreHref,
+  preview = false,
 }: {
   heading?: "h1" | "h2";
   readMoreHref?: string;
+  preview?: boolean;
 }) {
   const Heading = heading;
   return (
     <div className="max-w-3xl mx-auto px-6 md:px-0 text-gray-700 leading-relaxed">
-      <Heading className="font-display text-3xl md:text-4xl font-bold text-[#737874] mb-8">
+      <Heading className="font-display text-3xl md:text-4xl font-bold text-[#201c16] mb-8">
         How Is Anchor Aman Shinde Different From Other Anchor Competitors?
       </Heading>
 
@@ -37,7 +39,9 @@ export default function WhyAmanContent({
         with announcements.
       </p>
 
-      <h3 className="font-display text-2xl font-bold text-[#737874] mt-12 mb-4">
+      {!preview && (
+       <>
+      <h3 className="font-display text-2xl font-bold text-[#201c16] mt-12 mb-4">
         Signature Wedding Entertainment
       </h3>
       <p className="mb-4">
@@ -59,7 +63,7 @@ export default function WhyAmanContent({
         deeper cultural meaning rather than simply announcing the Varmala.
       </p>
 
-      <h3 className="font-display text-2xl font-bold text-[#737874] mt-12 mb-4">
+      <h3 className="font-display text-2xl font-bold text-[#201c16] mt-12 mb-4">
         A Family Anchor With Class
       </h3>
       <p className="mb-4">Aman believes a wedding anchor is also representing the family.</p>
@@ -84,7 +88,7 @@ export default function WhyAmanContent({
         and family-friendly.
       </p>
 
-      <h3 className="font-display text-2xl font-bold text-[#737874] mt-12 mb-4">
+      <h3 className="font-display text-2xl font-bold text-[#201c16] mt-12 mb-4">
         Experience That Shows When Things Go Unexpectedly
       </h3>
       <p className="mb-4">Live events rarely go exactly according to plan.</p>
@@ -103,7 +107,7 @@ export default function WhyAmanContent({
         situations are among the strongest advantages of his live anchoring style.
       </p>
 
-      <h3 className="font-display text-2xl font-bold text-[#737874] mt-12 mb-4">
+      <h3 className="font-display text-2xl font-bold text-[#201c16] mt-12 mb-4">
         More Than a Wedding Anchor
       </h3>
       <p className="mb-4">Aman hosts a wide range of celebrations and events including:</p>
@@ -118,7 +122,7 @@ export default function WhyAmanContent({
         professional corporate event.
       </p>
 
-      <h3 className="font-display text-2xl font-bold text-[#737874] mt-12 mb-4">
+      <h3 className="font-display text-2xl font-bold text-[#201c16] mt-12 mb-4">
         Delhi, Gwalior, Indore &amp; Destination Weddings
       </h3>
       <p className="mb-4">
@@ -132,7 +136,7 @@ export default function WhyAmanContent({
         locations across India.
       </p>
 
-      <h3 className="font-display text-2xl font-bold text-[#737874] mt-12 mb-4">
+      <h3 className="font-display text-2xl font-bold text-[#201c16] mt-12 mb-4">
         The Mic Magician Difference
       </h3>
       <p className="mb-4">Many people can speak on a mic.</p>
@@ -144,25 +148,29 @@ export default function WhyAmanContent({
         the moment speak for itself.
       </p>
       <p className="mb-4">That is the philosophy behind Anchor Aman Shinde – The Mic Magician.</p>
-      <p className="mb-6 font-semibold text-[#737874]">
+      <p className="mb-6 font-semibold text-[#201c16]">
         Professional. Experienced. Trusted. Premium. Highly Rated. Recommended.
       </p>
       <p className="mb-8">
         Not just an anchor for your event — the voice, energy and storyteller behind your
         celebration.
       </p>
+       </>
+      )}
 
       <div className="flex flex-wrap gap-4">
-        <Link
-          to="/contact"
-          className="inline-block bg-yellow-500 hover:bg-yellow-400 hover:scale-105 text-black font-semibold px-6 py-3 rounded-md transition"
-        >
-          Book Anchor Aman Shinde
-        </Link>
+        {!preview && (
+          <Link
+            to="/contact"
+            className="inline-block bg-yellow-500 hover:bg-yellow-400 hover:scale-105 text-black font-semibold px-6 py-3 rounded-md transition"
+          >
+            Book Anchor Aman Shinde
+          </Link>
+        )}
         {readMoreHref && (
           <Link
             to={readMoreHref}
-            className="inline-block border border-[#737874]/40 hover:border-yellow-500 hover:text-yellow-600 text-[#737874] font-semibold px-6 py-3 rounded-md transition"
+            className="inline-block bg-yellow-500 hover:bg-yellow-400 hover:scale-105 text-black font-semibold px-6 py-3 rounded-md transition"
           >
             Read More
           </Link>

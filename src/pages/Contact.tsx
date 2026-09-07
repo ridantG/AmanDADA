@@ -20,7 +20,7 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative min-h-screen bg-[#0a0a0a] text-white px-6 md:px-16 py-20 overflow-hidden">
+    <div className="relative min-h-screen bg-[#181511] text-white px-6 md:px-16 py-20 overflow-hidden">
       <SEO
         title="Book a Wedding Anchor in Delhi"
         description="Book the best wedding anchor in Delhi for your event. Call or WhatsApp Anchor Aman Shinde to check availability and get a quote for weddings, corporate events and destination weddings."

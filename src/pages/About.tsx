@@ -64,7 +64,7 @@ export default function About() {
 
         <motion.div {...fadeUp} className="relative md:w-1/2 w-full md:pl-12">
           <h3 className="text-sm font-semibold text-yellow-500 uppercase mb-2">About Me</h3>
-          <h1 className="font-display text-3xl md:text-4xl font-bold mb-4 text-[#737874]">
+          <h1 className="font-display text-3xl md:text-4xl font-bold mb-4 text-[#201c16]">
             Anchor Aman Shinde – The Mic Magician
             <span className="block text-xl md:text-2xl mt-1 text-yellow-600">
               Best Wedding Anchor in Delhi NCR
@@ -99,7 +99,7 @@ export default function About() {
       {/* ================= LONG-FORM ================= */}
       <section className="py-16 px-6 md:px-0 bg-gray-50">
         <div className="max-w-3xl mx-auto text-gray-700 leading-relaxed">
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#737874] mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#201c16] mb-4">
             Wedding Anchor for Every Celebration
           </h2>
           <p className="mb-4">
@@ -121,7 +121,7 @@ export default function About() {
             designed around the couple, family, guests and overall celebration.
           </p>
 
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#737874] mt-12 mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#201c16] mt-12 mb-4">
             Destination Wedding Anchor
           </h2>
           <p className="mb-4">
@@ -134,7 +134,7 @@ export default function About() {
             seamless event flow, ensuring that every ceremony feels engaging rather than routine.
           </p>
 
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#737874] mt-12 mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#201c16] mt-12 mb-4">
             More Than Just an Anchor
           </h2>
           <p className="mb-4">A great wedding anchor is not simply the person holding the mic.</p>
@@ -152,7 +152,7 @@ export default function About() {
             entertainment and event flow.
           </p>
 
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#737874] mt-12 mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#201c16] mt-12 mb-4">
             Why Choose Anchor Aman Shinde?
           </h2>
           <ul className="space-y-2 mb-4">
@@ -164,7 +164,7 @@ export default function About() {
             ))}
           </ul>
 
-          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#737874] mt-12 mb-4">
+          <h2 className="font-display text-2xl md:text-3xl font-bold text-[#201c16] mt-12 mb-4">
             The Aman Shinde Experience
           </h2>
           <p className="mb-4">
@@ -182,7 +182,7 @@ export default function About() {
           </p>
 
           <div className="border-t border-gray-200 pt-8 text-center">
-            <p className="font-display text-xl md:text-2xl font-bold text-[#737874]">
+            <p className="font-display text-xl md:text-2xl font-bold text-[#201c16]">
               Anchor Aman Shinde – The Mic Magician
             </p>
             <p className="text-yellow-600 font-semibold mt-2">

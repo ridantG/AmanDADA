@@ -19,7 +19,7 @@ export default function Navbar() {
   const { pathname } = useLocation();
 
   return (
-    <nav className="fixed top-0 left-0 w-full bg-[#1c1f1c] text-white shadow-md z-50">
+    <nav className="fixed top-0 left-0 w-full bg-[#181511] text-white shadow-md z-50">
       {/* Top contact/social bar */}
       <div className="hidden md:block bg-black/30 border-b border-white/5">
         <div className="max-w-7xl mx-auto flex items-center justify-between px-8 py-2 text-xs text-gray-300">
@@ -133,7 +133,7 @@ export default function Navbar() {
             animate={{ height: "auto", opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.25, ease: "easeInOut" }}
-            className="md:hidden bg-[#1c1f1c] overflow-hidden"
+            className="md:hidden bg-[#181511] overflow-hidden"
           >
             <div className="px-8 pb-6 space-y-4 text-lg font-semibold uppercase tracking-wide">
               {navLinks.map((link) => (

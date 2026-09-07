@@ -6,7 +6,7 @@ import { QUICK_LINKS, slugify } from "../data/quickLinks";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0a0a0a] text-gray-300 pt-16 pb-10 px-6 md:px-16">
+    <footer className="bg-[#181511] text-gray-300 pt-16 pb-10 px-6 md:px-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-10">
 
         {/* LOGO + ABOUT */}

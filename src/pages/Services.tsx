@@ -109,7 +109,7 @@ export default function Services() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-16"
       >
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-[#737874] uppercase">
+        <h1 className="font-display text-4xl md:text-5xl font-bold text-[#201c16] uppercase">
           Services by Anchor Aman Shinde
         </h1>
         <p className="text-gray-600 mt-4 max-w-2xl mx-auto">
@@ -125,7 +125,7 @@ export default function Services() {
       <section className="mb-16 max-w-4xl mx-auto">
         <div className="flex items-center gap-3 mb-4">
           <MapPin className="text-yellow-500" size={28} />
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#737874]">Service Regions</h2>
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#201c16]">Service Regions</h2>
         </div>
         <div className="bg-white shadow-lg p-6 rounded-xl border-l-4 border-yellow-500">
           <p className="text-gray-700 leading-relaxed">
@@ -157,7 +157,7 @@ export default function Services() {
                 <div className="w-11 h-11 rounded-lg bg-yellow-500/10 flex items-center justify-center shrink-0">
                   <service.icon className="text-yellow-500" size={22} />
                 </div>
-                <h2 className="font-display text-xl font-bold text-[#737874]">{service.title}</h2>
+                <h2 className="font-display text-xl font-bold text-[#201c16]">{service.title}</h2>
               </div>
               {service.blurb && <p className="text-gray-700 mb-3">{service.blurb}</p>}
               <p className="text-gray-700 whitespace-pre-line">

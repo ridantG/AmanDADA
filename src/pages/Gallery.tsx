@@ -33,7 +33,7 @@ export default function Gallery() {
         className="text-center mb-16"
       >
         <h3 className="text-sm font-semibold text-yellow-500 uppercase mb-2">Gallery</h3>
-        <h1 className="font-display text-4xl md:text-5xl font-bold text-[#737874]">
+        <h1 className="font-display text-4xl md:text-5xl font-bold text-[#201c16]">
           Moments On Stage
         </h1>
         <p className="text-gray-600 mt-4 max-w-2xl mx-auto">

@@ -9,6 +9,7 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
+  Quote,
   Mic,
   Heart,
   Star,
@@ -40,6 +41,46 @@ const socialLinks = [
     cta: "Subscribe",
     href: SOCIALS.youtube,
     hoverText: "group-hover:text-red-500",
+  },
+];
+
+// Placeholder client quotes — replace with real testimonials.
+const testimonials = [
+  {
+    quote:
+      "Aman had every guest — from my 8-year-old cousin to my 80-year-old grandfather — laughing and dancing. He read the room perfectly and never once crossed a line.",
+    name: "Priya & Karan Mehta",
+    context: "Wedding & Sangeet · Delhi",
+  },
+  {
+    quote:
+      "We were worried our Haldi would drag. Aman kept the energy up and ran his Wheel of Fortune game — it became everyone's favourite part of the wedding.",
+    name: "Ananya Sharma",
+    context: "Haldi & Mehendi · Gwalior",
+  },
+  {
+    quote:
+      "He hosted our annual meet for 400 people. Professional, perfectly timed, switched effortlessly between Hindi and English. Leadership asked for him again next year.",
+    name: "Rohit Nair",
+    context: "Corporate Annual Meet · Gurugram",
+  },
+  {
+    quote:
+      "The Varmala presented as Shiv-Shakti Milan gave me goosebumps. Our families still talk about it — he turned a 10-minute ritual into the moment of the night.",
+    name: "Sneha & Aditya",
+    context: "Destination Wedding · Udaipur",
+  },
+  {
+    quote:
+      "A vendor cancelled last minute and the schedule fell apart. Aman improvised for 40 minutes and not one guest realised anything had gone wrong.",
+    name: "Meghna Kapoor",
+    context: "Wedding Reception · Indore",
+  },
+  {
+    quote:
+      "Booked him for our college fest. High energy, great crowd control, kept 2,000 students engaged for hours. Easily the best host we've had.",
+    name: "Student Council",
+    context: "Cultural Fest · Bhopal",
   },
 ];
 
@@ -284,7 +325,7 @@ export default function Home() {
           <h3 className="text-sm font-semibold text-yellow-500 uppercase mb-2">
             About Anchor Aman Shinde
           </h3>
-          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-[#737874]">
+          <h2 className="font-display text-3xl md:text-4xl font-bold mb-4 text-[#201c16]">
             Anchor in Delhi | Top Wedding Anchor in India
           </h2>
           <p className="text-gray-600 leading-relaxed mb-6">
@@ -305,7 +346,7 @@ export default function Home() {
 
       {/* ================= WHAT MAKES HIM DIFFERENT SECTION ================= */}
       <section className="py-20 px-6 md:px-16 bg-gray-50">
-        <WhyAmanContent readMoreHref="/why-aman-shinde" />
+        <WhyAmanContent preview readMoreHref="/why-aman-shinde" />
       </section>
 
       {/* ================= HOW WE DO IT SECTION ================= */}
@@ -373,7 +414,7 @@ export default function Home() {
       {/* ================= SERVICE AREAS SECTION ================= */}
       <section className="py-20 px-6 md:px-16 bg-white">
         <motion.div {...fadeUp} className="max-w-3xl mx-auto text-center mb-12">
-          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#737874] mb-4">
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#201c16] mb-4">
             Wedding Anchor in Delhi, Gwalior &amp; Indore
           </h2>
           <p className="text-gray-600 leading-relaxed">
@@ -393,7 +434,7 @@ export default function Home() {
             >
               <div className="flex items-center gap-2 mb-3">
                 <MapPin className="text-yellow-500 shrink-0" size={20} />
-                <h3 className="font-display text-xl font-bold text-[#737874]">{area.city}</h3>
+                <h3 className="font-display text-xl font-bold text-[#201c16]">{area.city}</h3>
               </div>
               <p className="text-gray-600 text-sm leading-relaxed">{area.blurb}</p>
             </motion.div>
@@ -436,9 +477,41 @@ export default function Home() {
         ))}
       </section>
 
+      {/* ================= TESTIMONIALS SECTION ================= */}
+      <section className="py-24 px-6 md:px-16 bg-gray-50">
+        <motion.div {...fadeUp} className="max-w-3xl mx-auto text-center mb-14">
+          <hr className="rule-gold mx-auto mb-6" />
+          <h2 className="font-display text-3xl md:text-4xl font-bold text-[#201c16] mb-4">
+            What Clients Say
+          </h2>
+          <p className="text-gray-600 leading-relaxed">
+            Families, couples and companies who trusted Aman with the moments that mattered.
+          </p>
+        </motion.div>
+
+        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {testimonials.map((t) => (
+            <motion.figure
+              key={t.name}
+              {...fadeUp}
+              className="flex flex-col bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-lg hover:-translate-y-1 transition"
+            >
+              <Quote className="text-yellow-500 shrink-0 mb-4" size={28} />
+              <blockquote className="font-display text-lg leading-relaxed text-[#201c16] italic">
+                “{t.quote}”
+              </blockquote>
+              <figcaption className="mt-6 pt-4 border-t border-gray-100">
+                <div className="font-semibold text-[#201c16]">{t.name}</div>
+                <div className="text-sm text-gray-500">{t.context}</div>
+              </figcaption>
+            </motion.figure>
+          ))}
+        </div>
+      </section>
+
       {/* ================= FOLLOW THE JOURNEY SECTION ================= */}
       <section className="py-20 px-6 md:px-16 bg-white text-center">
-        <motion.h2 {...fadeUp} className="font-display text-3xl md:text-4xl font-bold text-[#737874] mb-2">
+        <motion.h2 {...fadeUp} className="font-display text-3xl md:text-4xl font-bold text-[#201c16] mb-2">
           Follow the Journey
         </motion.h2>
         <p className="text-gray-500 mb-10">Behind-the-scenes, highlight reels, and what's next on stage</p>
@@ -455,7 +528,7 @@ export default function Home() {
             >
               <social.icon className={`text-gray-700 shrink-0 transition-colors ${social.hoverText}`} size={36} />
               <span className="text-left">
-                <span className="block font-semibold text-[#737874]">{social.name}</span>
+                <span className="block font-semibold text-[#201c16]">{social.name}</span>
                 <span className="block text-sm text-gray-500">{social.handle}</span>
               </span>
               <span className="ml-auto bg-yellow-500 text-black text-sm font-semibold px-4 py-2 rounded-md group-hover:bg-yellow-400 group-hover:scale-105 transition">
@@ -467,7 +540,7 @@ export default function Home() {
       </section>
 
           {/* ================= CONTACT SECTION ================= */}
-<section className="relative bg-[#0a0a0a] text-white py-20 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between overflow-hidden">
+<section className="relative bg-[#181511] text-white py-20 px-6 md:px-16 flex flex-col md:flex-row items-center justify-between overflow-hidden">
   <div className="absolute top-1/2 -right-32 -translate-y-1/2 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl" />
   {/* LEFT SIDE - FORM */}
   <motion.div {...fadeUp} className="relative w-full md:w-1/2 space-y-6">

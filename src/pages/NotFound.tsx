@@ -11,7 +11,7 @@ export default function NotFound() {
         noindex
       />
       <p className="text-yellow-500 font-semibold uppercase tracking-wide mb-2">404</p>
-      <h1 className="text-3xl md:text-4xl font-bold text-[#737874] mb-4">Page Not Found</h1>
+      <h1 className="text-3xl md:text-4xl font-bold text-[#201c16] mb-4">Page Not Found</h1>
       <p className="text-gray-600 max-w-md mb-8">
         The page you're looking for doesn't exist or has moved.
       </p>
